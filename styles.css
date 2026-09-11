@@ -32,7 +32,7 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   margin: 0;
@@ -40,7 +40,7 @@ body {
   color: var(--ink);
   font: 400 17px/1.6 var(--body);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
   /* Едва заметная миллиметровка — признак бумаги, а не пустого экрана. */
   background-image:
     linear-gradient(rgba(21, 19, 15, 0.035) 1px, transparent 1px),
@@ -720,9 +720,10 @@ p { margin: 0; }
 
 /* Схематичный телефон: показывает структуру приложения, а не притворяется
    скриншотом, которого у нас нет. */
+.phone-wrap { justify-self: center; width: min(100%, 320px); }
+
 .phone {
-  justify-self: center;
-  width: min(100%, 320px);
+  width: 100%;
   aspect-ratio: 9 / 18.5;
   border-radius: 44px;
   padding: 12px;
@@ -941,11 +942,302 @@ button[disabled] { opacity: 0.45; cursor: not-allowed; }
   to { opacity: 1; transform: none; }
 }
 
+
+/* ── Атмосфера ─────────────────────────────────────────────────────────── */
+
+/* Тёплое свечение в углу первого экрана — угли под бумагой, а не плоский
+   фон. Размытие большое, чтобы читалось как свет, а не как пятно. */
+.hero__glow {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 900px;
+  max-height: 900px;
+  background: radial-gradient(circle, rgba(232, 76, 17, 0.28), rgba(232, 76, 17, 0.08) 40%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  animation: breathe 9s ease-in-out infinite alternate;
+}
+
+@keyframes breathe {
+  from { transform: scale(1) translate(0, 0); opacity: 0.9; }
+  to { transform: scale(1.12) translate(-4%, 6%); opacity: 1; }
+}
+
+/* Контурная надпись на подложке — как тиснение на обложке досье. */
+.hero__mark {
+  position: absolute;
+  left: -0.04em;
+  bottom: -0.22em;
+  font: 700 clamp(160px, 28vw, 420px)/1 var(--display);
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(21, 19, 15, 0.1);
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 980px) { .hero__mark { display: none; } .hero__glow { right: -30%; } }
+
+.hero__grid { position: relative; }
+
+/* Кнопка-огонь: градиент и свечение, стрелка сдвигается при наведении. */
+.btn--fire {
+  background: linear-gradient(135deg, #ff6a2c, var(--ember) 55%, var(--ember-deep));
+  box-shadow:
+    0 14px 30px -14px rgba(232, 76, 17, 0.9),
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset;
+}
+
+.btn--fire:hover {
+  background: linear-gradient(135deg, #ff7a40, #ef5416 55%, var(--ember-deep));
+  box-shadow: 0 18px 36px -14px rgba(232, 76, 17, 1), 0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+  transform: translateY(-1px);
+}
+
+.btn .arrow { transition: transform 0.2s ease; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* Карта: блик проходит по пластику, герб-призрак в углу, штрих-код внизу. */
+.card { transform-style: preserve-3d; }
+
+.card__sheen {
+  position: absolute;
+  inset: -40% -60%;
+  background: linear-gradient(115deg, transparent 42%, rgba(255, 255, 255, 0.09) 50%, transparent 58%);
+  transform: translateX(-60%);
+  animation: sheen 7s ease-in-out 1.4s infinite;
+  pointer-events: none;
+}
+
+@keyframes sheen {
+  0%, 60% { transform: translateX(-60%); }
+  85%, 100% { transform: translateX(60%); }
+}
+
+.card__ghost {
+  position: absolute;
+  right: -12%;
+  bottom: -14%;
+  width: 62%;
+  opacity: 0.07;
+  filter: grayscale(1) contrast(1.4);
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(circle at 40% 40%, #000 40%, transparent 85%);
+  mask-image: radial-gradient(circle at 40% 40%, #000 40%, transparent 85%);
+}
+
+.card__code {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font: 500 10px/1 var(--mono);
+  letter-spacing: 0.18em;
+  color: rgba(246, 241, 232, 0.5);
+}
+
+.card__code .bars {
+  flex: 1;
+  height: 26px;
+  max-width: 220px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(246, 241, 232, 0.7) 0 2px, transparent 2px 5px,
+    rgba(246, 241, 232, 0.7) 5px 6px, transparent 6px 10px,
+    rgba(246, 241, 232, 0.7) 10px 13px, transparent 13px 15px,
+    rgba(246, 241, 232, 0.7) 15px 16px, transparent 16px 20px
+  );
+  opacity: 0.55;
+}
+
+.card__crest img { box-shadow: 0 0 40px rgba(232, 76, 17, 0.35); }
+
+/* Лента слов между экранами — движется медленно, как титры. */
+.ribbon {
+  overflow: hidden;
+  background: var(--coal);
+  color: var(--paper);
+  padding: 16px 0;
+  transform: rotate(-1.2deg);
+  margin: 6px -2vw -10px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 40px -30px rgba(21, 19, 15, 0.8);
+}
+
+.ribbon__track {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: max-content;
+  font: 700 13px/1 var(--mono);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  animation: ticker 40s linear infinite;
+}
+
+.ribbon__track i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ember);
+  box-shadow: 0 0 12px rgba(232, 76, 17, 0.9);
+}
+
+@keyframes ticker {
+  to { transform: translateX(-50%); }
+}
+
+/* Плитки: крупная бледная цифра в углу и акцентная линия сверху. */
+.tile {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.tile::before {
+  content: counter(tile, decimal-leading-zero);
+  counter-increment: tile;
+  position: absolute;
+  right: 14px;
+  bottom: -18px;
+  font: 700 84px/1 var(--display);
+  letter-spacing: -0.05em;
+  color: rgba(21, 19, 15, 0.05);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.tiles { counter-reset: tile; }
+
+.tile:hover::before { color: rgba(232, 76, 17, 0.12); transform: translateY(-6px); }
+
+.tile:hover { box-shadow: 0 30px 50px -30px rgba(21, 19, 15, 0.35); }
+
+/* Тёмная плашка пути: свечение углей и зерно, чтобы чернота не была мёртвой. */
+.band--coal { position: relative; overflow: hidden; }
+
+.band--glow::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  bottom: -40%;
+  width: 60%;
+  height: 90%;
+  background: radial-gradient(circle, rgba(232, 76, 17, 0.32), transparent 65%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.band--coal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(246, 241, 232, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.35;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%, transparent);
+  mask-image: linear-gradient(180deg, transparent, #000 40%, transparent);
+  pointer-events: none;
+}
+
+.band--coal .wrap { position: relative; z-index: 1; }
+
+/* Первый шаг «живой»: кольцо расходится от точки, как сигнал. */
+.step:first-child .step__dot::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ember);
+  animation: ping 2.4s ease-out infinite;
+}
+
+@keyframes ping {
+  from { transform: scale(0.8); opacity: 0.9; }
+  to { transform: scale(1.8); opacity: 0; }
+}
+
+.step__dot { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.step:hover .step__dot { transform: translateY(-3px); box-shadow: 0 12px 28px -10px rgba(232, 76, 17, 0.9); }
+
+/* Города: код города крупно на подложке карточки. */
+.city { position: relative; overflow: hidden; }
+
+.city__code {
+  position: absolute;
+  left: 14px;
+  bottom: -14px;
+  font: 700 72px/1 var(--display);
+  letter-spacing: -0.05em;
+  color: rgba(21, 19, 15, 0.05);
+  pointer-events: none;
+}
+
+.city:not(.city--soon) .city__code { color: rgba(232, 76, 17, 0.1); }
+.city > * { position: relative; }
+.city .city__code { position: absolute; }
+
+/* Форматы: строка подсвечивается и номер загорается. */
+.row { transition: background 0.2s ease; border-radius: 12px; }
+.row:hover { background: rgba(255, 255, 255, 0.5); }
+.row:hover .row__no { color: var(--ember); }
+
+/* Телефон: слегка наклонён и парит — устройство, а не скриншот. */
+.phone {
+  transform: rotate(-4deg);
+  animation: float 7s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: rotate(-4deg) translateY(0); }
+  50% { transform: rotate(-4deg) translateY(-12px); }
+}
+
+.phone__row { transition: background 0.2s ease, border-color 0.2s ease; }
+.phone__row:hover { background: rgba(246, 241, 232, 0.1); border-color: rgba(232, 76, 17, 0.5); }
+
+/* Футер: огромная контурная надпись во всю ширину. */
+.foot { position: relative; overflow: hidden; }
+
+.foot__word {
+  position: absolute;
+  left: 50%;
+  bottom: -0.28em;
+  translate: -50% 0;
+  font: 700 clamp(120px, 24vw, 380px)/1 var(--display);
+  letter-spacing: -0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(21, 19, 15, 0.08);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.foot .wrap { position: relative; }
+
+/* Появление: чуть резче и с расфокуса — как проявляется отпечаток. */
+.reveal { filter: blur(6px); transform: translateY(22px); }
+.reveal.is-in { filter: blur(0); }
+.reveal { transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.25, 1), transform 0.7s cubic-bezier(0.2, 0.9, 0.25, 1), filter 0.7s ease; }
+
+/* Каскад плиток и шагов: соседи появляются с шагом, а не разом. */
+.tiles .reveal:nth-child(2), .path .reveal:nth-child(2), .cities .reveal:nth-child(2) { transition-delay: 0.08s; }
+.tiles .reveal:nth-child(3), .path .reveal:nth-child(3), .cities .reveal:nth-child(3) { transition-delay: 0.16s; }
+.tiles .reveal:nth-child(4), .path .reveal:nth-child(4) { transition-delay: 0.24s; }
+
+/* Выделение текста — в цвет клуба. */
+::selection { background: var(--ember); color: #fff; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .reveal { opacity: 1; transform: none; }
+  .reveal { opacity: 1; transform: none; filter: none; }
   .stamp { transform: rotate(-6deg); }
+  .phone { transform: rotate(-4deg); }
 }
 
 /* ── Страница кодекса ──────────────────────────────────────────────────── */

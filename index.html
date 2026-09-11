@@ -35,7 +35,6 @@
     <a href="#path">Как вступить</a>
     <a href="#life">Форматы</a>
     <a href="code.html">Кодекс</a>
-    <a href="#app">Приложение</a>
   </nav>
   <a class="btn btn--fire btn--sm" href="#join">Подать заявку <span class="arrow">→</span></a>
 </header>
@@ -44,6 +43,8 @@
 
   <!-- ── Первый экран ─────────────────────────────────────────────────── -->
   <section class="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__mark" aria-hidden="true">BURN</div>
     <div class="wrap hero__grid">
       <div>
         <div class="stamp">
@@ -66,6 +67,8 @@
 
       <!-- Карта резидента: тёмное досье вместо карты перелётов. -->
       <aside class="card" aria-label="Карта резидента BURN">
+        <span class="card__sheen" aria-hidden="true"></span>
+        <img class="card__ghost" src="assets/crest.png" alt="" aria-hidden="true">
         <div class="card__head">
           <span class="tag">Карта резидента</span>
           <span>№ BRN · 0001</span>
@@ -93,9 +96,20 @@
           Мероприятия и привилегии показываются по городу резидента.
           Новые города открываются по мере набора состава.
         </p>
+        <div class="card__code" aria-hidden="true">
+          <span class="bars"></span>
+          <span>BRN·ALA·2026·0001</span>
+        </div>
       </aside>
     </div>
   </section>
+
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon__track">
+      <span>Окружение</span><i></i><span>Сделки</span><i></i><span>Решения</span><i></i><span>Доверие</span><i></i><span>Алматы</span><i></i><span>Кодекс резидента</span><i></i>
+      <span>Окружение</span><i></i><span>Сделки</span><i></i><span>Решения</span><i></i><span>Доверие</span><i></i><span>Алматы</span><i></i><span>Кодекс резидента</span><i></i>
+    </div>
+  </div>
 
   <!-- ── Что даёт клуб ─────────────────────────────────────────────────── -->
   <section class="band" id="club">
@@ -138,7 +152,7 @@
   </section>
 
   <!-- ── Путь в клуб ───────────────────────────────────────────────────── -->
-  <section class="band band--coal" id="path">
+  <section class="band band--coal band--glow" id="path">
     <div class="wrap">
       <div class="band__head reveal">
         <div>
@@ -247,16 +261,19 @@
       <div class="cities">
         <div class="city reveal">
           <span class="city__stamp">Работает</span>
+          <span class="city__code" aria-hidden="true">ALA</span>
           <h3>Алматы</h3>
           <p class="tag">Набор открыт</p>
         </div>
         <div class="city city--soon reveal">
           <span class="city__stamp">Скоро</span>
+          <span class="city__code" aria-hidden="true">NQZ</span>
           <h3>Астана</h3>
           <p class="tag tag--dim">Открытие готовится</p>
         </div>
         <div class="city city--soon reveal">
           <span class="city__stamp">Скоро</span>
+          <span class="city__code" aria-hidden="true">CIT</span>
           <h3>Шымкент</h3>
           <p class="tag tag--dim">Открытие готовится</p>
         </div>
@@ -294,40 +311,6 @@
         <li>Ответственность за нарушение</li>
         <li>Основания для исключения</li>
       </ol>
-    </div>
-  </section>
-
-  <!-- ── Приложение ────────────────────────────────────────────────────── -->
-  <section class="band" id="app">
-    <div class="wrap app">
-      <div class="reveal">
-        <p class="tag">Приложение</p>
-        <h2 style="font-size:clamp(30px,4.4vw,52px);line-height:1.04;margin-top:14px">Клуб в телефоне</h2>
-        <p class="band__note" style="margin-top:18px">
-          Приложение BURN — рабочий инструмент резидента, а не витрина.
-          Сейчас доступно по приглашению для тестирования.
-        </p>
-        <div class="app__list">
-          <div><span>01</span> Мероприятия, регистрация и свободные места</div>
-          <div><span>02</span> Каталог резидентов: кто чем полезен и что ищет</div>
-          <div><span>03</span> Чаты клуба, включая общий канал и голосовые</div>
-          <div><span>04</span> Победы резидентов и рейтинг активности</div>
-          <div><span>05</span> Привилегии партнёров по городам</div>
-          <div><span>06</span> Обучение клуба с видео-уроками</div>
-        </div>
-        <div class="hero__actions">
-          <a class="btn btn--ink" href="https://testflight.apple.com/join/r3nkECEA" target="_blank" rel="noopener">Открыть в TestFlight <span class="arrow">→</span></a>
-        </div>
-      </div>
-
-      <div class="phone reveal" role="img" aria-label="Схема приложения BURN">
-        <div class="phone__screen">
-          <div class="phone__row"><small>Ближайшее</small><b>Совет директоров</b><span>10 октября · 19:00 · 6 мест</span></div>
-          <div class="phone__row"><small>Каталог</small><b>Резиденты · Алматы</b><span>ниши, запросы, чем полезен</span></div>
-          <div class="phone__row"><small>Чаты</small><b>Общий канал BURN</b><span>текст и голосовые</span></div>
-          <div class="phone__row"><small>Рейтинг</small><b>BURN PRO · 1 520</b><span>за что начислено — по строкам</span></div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -392,6 +375,7 @@
 </main>
 
 <footer class="foot">
+  <div class="foot__word" aria-hidden="true">BURN</div>
   <div class="wrap">
     <div class="foot__grid">
       <div class="reveal">
