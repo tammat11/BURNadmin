@@ -115,6 +115,38 @@ if (top) {
 const year = document.getElementById("year");
 if (year) year.textContent = String(new Date().getFullYear());
 
+/* ── Счётчики в блоке «Клуб в цифрах» ──────────────────────────────────── */
+
+/* Число доезжает до значения, когда блок появился. Разметка уже содержит
+   итог, поэтому без скрипта и при отключённой анимации цифра просто стоит
+   на месте — это не декоративная пустышка. */
+const counters = document.querySelectorAll("[data-count]");
+
+if (counters.length && !reduceMotion && "IntersectionObserver" in window) {
+  const run = node => {
+    const target = Number(node.dataset.count);
+    const suffix = node.dataset.suffix ?? "";
+    const started = performance.now();
+    const step = now => {
+      const t = Math.min(1, (now - started) / 1100);
+      const eased = 1 - Math.pow(1 - t, 3);
+      node.textContent = Math.round(target * eased) + (t === 1 ? suffix : "");
+      if (t < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  const watcher = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      run(entry.target);
+      watcher.unobserve(entry.target);
+    }
+  }, { threshold: 0.5 });
+
+  counters.forEach(node => watcher.observe(node));
+}
+
 /* ── Заявка ────────────────────────────────────────────────────────────── */
 
 const form = document.getElementById("apply");

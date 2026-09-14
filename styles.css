@@ -1371,6 +1371,88 @@ button[disabled] { opacity: 0.45; cursor: not-allowed; }
 
 .form__title span.tag { color: var(--flame); }
 
+
+/* ── Доступность и удобство ────────────────────────────────────────────── */
+
+/* Ссылка для клавиатуры: до содержимого без прохода по всей навигации. */
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 12px 18px;
+  background: var(--ember);
+  color: #1a0a04;
+  font: 700 14px/1 var(--body);
+  border-radius: 0 0 10px 0;
+  text-decoration: none;
+}
+
+.skip:focus { left: 0; }
+
+/* Видимое кольцо фокуса вместо системного контура, который на тёмном фоне
+   почти не читается. :focus-visible — чтобы кольцо не появлялось от мыши. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--flame);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.form input:focus-visible { outline-offset: 6px; }
+
+button, .btn, .consent { cursor: pointer; }
+
+/* Якоря не должны уезжать под липкую шапку. */
+:target, section[id] { scroll-margin-top: 90px; }
+
+/* На телефоне пальцу нужно не меньше 44px — правило касается и мелкой
+   кнопки в шапке, у которой высота была 33px. */
+@media (max-width: 720px) {
+  .btn--sm { min-height: 44px; padding: 12px 18px; }
+  .top__nav a { min-height: 44px; display: inline-flex; align-items: center; }
+}
+
+/* ── Клуб в цифрах ─────────────────────────────────────────────────────── */
+
+.band--tight { padding: clamp(40px, 6vh, 70px) 0; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 860px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.stat {
+  padding: 22px 20px;
+  border: 1.5px solid var(--line);
+  border-left: 2px solid rgba(255, 90, 31, 0.55);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.stat b {
+  display: block;
+  font: 700 clamp(34px, 4vw, 52px)/1 var(--display);
+  letter-spacing: -0.03em;
+  background: var(--fire);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat span {
+  display: block;
+  margin-top: 10px;
+  font: 500 13px/1.45 var(--body);
+  color: var(--ink-soft);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
