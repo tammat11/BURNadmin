@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BURN — закрытое сообщество предпринимателей, Алматы</title>
-<meta name="description" content="BURN — сообщество предпринимателей, кто уже построил бизнес. Окружение, сделки, решения. Алматы, Астана, Шымкент.">
+<meta name="description" content="BURN — клуб предпринимателей, которые уже построили бизнес. Алматы. Вход по заявке, личной встрече и решению совета.">
 <meta name="theme-color" content="#0e0906">
 <link rel="icon" href="assets/crest.png">
 <meta property="og:title" content="BURN — закрытое сообщество предпринимателей">
-<meta property="og:description" content="Окружение, сделки, решения. Сюда не заходят «посмотреть».">
+<meta property="og:description" content="Клуб для тех, кто уже построил. Алматы.">
 <meta property="og:image" content="assets/logo-full.png">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,17 +38,18 @@
     <button type="button" data-lang="en">EN</button>
   </div>
   <nav class="top__nav">
-    <a href="#club" data-i18n="navClub">Клуб</a>
+    <a href="#who" data-i18n="navWho">Кому сюда</a>
+    <a href="#year" data-i18n="navYear">Год в клубе</a>
     <a href="#path" data-i18n="navPath">Как вступить</a>
-    <a href="#life" data-i18n="navLife">Форматы</a>
     <a href="code.html" data-i18n="navCode">Кодекс</a>
+    <a href="#faq" data-i18n="navFaq">Вопросы</a>
   </nav>
   <a class="btn btn--fire btn--sm" href="#join"><span data-i18n="ctaApply">Подать заявку</span> <span class="arrow">→</span></a>
 </header>
 
 <main id="main">
 
-  <!-- ── Первый экран ─────────────────────────────────────────────────── -->
+  <!-- ── 1. Позиция клуба ─────────────────────────────────────────────── -->
   <section class="hero">
     <div class="hero__glow" aria-hidden="true"></div>
     <canvas class="embers" id="embers" aria-hidden="true"></canvas>
@@ -60,20 +61,20 @@
           <small data-i18n="stampSub">Алматы · с 2024</small>
         </div>
         <p class="tag" style="display:flex" data-i18n="heroTag">Набор резидентов на сезон открыт</p>
-        <h1 data-i18n-html="heroTitle">Окружение,<br>в котором <em>решают</em></h1>
+        <h1 data-i18n-html="heroTitle">Клуб для тех,<br>кто уже <em>построил</em></h1>
         <p class="hero__lede" data-i18n="heroLede">
-          BURN — сообщество предпринимателей, кто уже построил бизнес.
-          Окружение, сделки, решения. Вход — по заявке и личной встрече.
-          Сюда не заходят «посмотреть».
+          Не курсы, не нетворкинг по билету и не чат с холодными рассылками.
+          Круг предпринимателей с действующим бизнесом, куда попадают по
+          заявке, личной встрече и решению совета.
         </p>
         <div class="hero__actions">
           <a class="btn btn--fire" href="#join"><span data-i18n="ctaApply">Подать заявку</span> <span class="arrow">→</span></a>
-          <a class="btn btn--ghost" href="#path" data-i18n="ctaHow">Как устроено вступление</a>
+          <a class="btn btn--ghost" href="#who" data-i18n="ctaCheck">Проверить, моё ли это</a>
         </div>
-        <p class="hero__hint" data-i18n="heroHint">Листайте — путь в клуб из четырёх шагов</p>
+        <p class="hero__hint" data-i18n="heroHint">Сначала честный фильтр — кому сюда не надо</p>
       </div>
 
-      <!-- Карта резидента: тёмное досье вместо карты перелётов. -->
+      <!-- Карта резидента: то, что получает дошедший до конца пути. -->
       <aside class="card" aria-label="Карта резидента BURN">
         <span class="card__sheen" aria-hidden="true"></span>
         <img class="card__ghost" src="assets/crest.png" alt="" aria-hidden="true">
@@ -101,8 +102,8 @@
           <span class="chip" data-i18n="shymkentSoon">Шымкент · скоро</span>
         </div>
         <p class="card__foot" data-i18n="cardFoot">
-          Мероприятия и привилегии показываются по городу резидента.
-          Новые города открываются по мере набора состава.
+          Карту получает тот, кого принял совет. Она открывает приложение,
+          каталог резидентов, чаты клуба и привилегии партнёров своего города.
         </p>
         <div class="card__code" aria-hidden="true">
           <span class="bars"></span>
@@ -119,70 +120,172 @@
     </div>
   </div>
 
-  <!-- ── Клуб в цифрах ─────────────────────────────────────────────────── -->
-  <section class="band band--tight" aria-label="Клуб в цифрах">
-    <div class="wrap stats">
-      <div class="stat reveal">
-        <b data-count="4">4</b>
-        <span data-i18n="statSteps">шага до резидентства</span>
-      </div>
-      <div class="stat reveal">
-        <b data-count="6">6</b>
-        <span data-i18n="statFormats">форматов встреч клуба</span>
-      </div>
-      <div class="stat reveal">
-        <b data-count="12">12</b>
-        <span data-i18n="statClauses">разделов Кодекса</span>
-      </div>
-      <div class="stat reveal">
-        <b data-count="3">3</b>
-        <span data-i18n="statCities">города в планах клуба</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Что даёт клуб ─────────────────────────────────────────────────── -->
-  <section class="band" id="club">
+  <!-- ── 2. Честный фильтр ────────────────────────────────────────────── -->
+  <section class="band" id="who">
     <div class="wrap">
       <div class="band__head reveal">
         <div>
-          <p class="tag" data-i18n="clubTag">Что даёт клуб</p>
-          <h2 data-i18n="clubTitle">Не нетворкинг-площадка, а круг</h2>
+          <p class="tag" data-i18n="whoTag">Честный фильтр</p>
+          <h2 data-i18n="whoTitle">Сначала о том, кому сюда не надо</h2>
         </div>
-        <p class="band__note" data-i18n="clubNote">
-          Здесь не учат стартовать и не продают курсы. Люди приходят за
-          средой, в которой решения принимаются быстрее, а партнёр находится
-          за один разговор. Каждый резидент отвечает за того, кого привёл.
+        <p class="band__note" data-i18n="whoNote">
+          Закрытый клуб держится не списком привилегий, а тем, кого в нём нет.
+          Прочитайте правую колонку первой: если узнали себя — сэкономите время
+          и себе, и совету.
         </p>
       </div>
 
-      <div class="tiles">
-        <div class="tile reveal">
-          <div class="tile__no" data-i18n="tile1No">01 / Окружение</div>
-          <h3 data-i18n="tile1H">Предприниматели с действующим бизнесом</h3>
-          <p data-i18n="tile1P">Состав проверяется при вступлении — личная встреча и решение совета клуба. Случайных людей нет.</p>
+      <div class="split">
+        <div class="fit fit--yes reveal">
+          <p class="fit__label" data-i18n="fitYes">Вам сюда</p>
+          <ul>
+            <li data-i18n="yes1">У вас действующий бизнес, а не идея на стадии презентации.</li>
+            <li data-i18n="yes2">Вы готовы вынести свой вопрос на разбор и услышать неудобное.</li>
+            <li data-i18n="yes3">Вам ценнее один разговор по делу, чем сто контактов в телефоне.</li>
+            <li data-i18n="yes4">Вы придёте на встречу сами, а не пришлёте вместо себя менеджера.</li>
+          </ul>
         </div>
-        <div class="tile reveal">
-          <div class="tile__no" data-i18n="tile2No">02 / Сделки</div>
-          <h3 data-i18n="tile2H">Партнёрства по взаимному интересу</h3>
-          <p data-i18n="tile2P">Агрессивные продажи внутри клуба запрещены Кодексом. BURN — не база клиентов, а место, где сделки случаются сами.</p>
-        </div>
-        <div class="tile reveal">
-          <div class="tile__no" data-i18n="tile3No">03 / Решения</div>
-          <h3 data-i18n="tile3H">Разборы и советы директоров</h3>
-          <p data-i18n="tile3P">Вопрос, который вы тянули полгода, разбирается за один вечер теми, кто это уже проходил.</p>
-        </div>
-        <div class="tile reveal">
-          <div class="tile__no" data-i18n="tile4No">04 / Доверие</div>
-          <h3 data-i18n="tile4H">Полная конфиденциальность</h3>
-          <p data-i18n="tile4P">Всё, что сказано внутри, остаётся внутри. Нарушение — одно из самых серьёзных по Кодексу.</p>
+        <div class="fit fit--no reveal">
+          <p class="fit__label" data-i18n="fitNo">Вам не сюда</p>
+          <ul>
+            <li data-i18n="no1">Нужна база клиентов и площадка для продаж в лоб.</li>
+            <li data-i18n="no2">Ищете инвестора под идею, за которой пока нет выручки.</li>
+            <li data-i18n="no3">Хотите «посмотреть, что за клуб», а решать потом.</li>
+            <li data-i18n="no4">Правила сообщества кажутся лишней формальностью.</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Путь в клуб ───────────────────────────────────────────────────── -->
-  <section class="band band--coal band--glow" id="path">
+  <!-- ── 3. Год в клубе ───────────────────────────────────────────────── -->
+  <section class="band band--coal band--glow" id="year">
+    <div class="wrap">
+      <div class="band__head reveal">
+        <div>
+          <p class="tag" data-i18n="yearTag">Ритм</p>
+          <h2 data-i18n="yearTitle">Год в клубе</h2>
+        </div>
+        <p class="band__note" data-i18n="yearNote">
+          Клуб живёт не анонсами, а расписанием. Совет директоров и завтраки
+          повторяются каждый месяц, разборы и выезды — по сезону. Расписание,
+          регистрация и свободные места — в приложении.
+        </p>
+      </div>
+
+      <div class="year reveal" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </div>
+
+      <div class="cadence">
+        <div class="beat reveal">
+          <span class="beat__when" data-i18n="beatMonthly">Ежемесячно</span>
+          <h3 data-i18n="beat1H">Совет директоров</h3>
+          <p data-i18n="beat1P">Разбор запросов резидентов и решения по клубу. Официальная часть — без алкоголя.</p>
+        </div>
+        <div class="beat reveal">
+          <span class="beat__when" data-i18n="beatMonthly">Ежемесячно</span>
+          <h3 data-i18n="beat2H">Бизнес-завтраки</h3>
+          <p data-i18n="beat2P">Утро, узкий состав, конкретные задачи и обмен практикой.</p>
+        </div>
+        <div class="beat reveal">
+          <span class="beat__when" data-i18n="beatByRequest">По запросу</span>
+          <h3 data-i18n="beat3H">Разборы и стратегические сессии</h3>
+          <p data-i18n="beat3P">Одна компания, один вопрос, вечер плотной работы.</p>
+        </div>
+        <div class="beat reveal">
+          <span class="beat__when" data-i18n="beatQuarterly">Раз в квартал</span>
+          <h3 data-i18n="beat4H">Встречи со спикерами</h3>
+          <p data-i18n="beat4P">Люди с опытом, который нельзя прочитать в книге.</p>
+        </div>
+        <div class="beat reveal">
+          <span class="beat__when" data-i18n="beatSeason">По сезону</span>
+          <h3 data-i18n="beat5H">Спорт и выезды</h3>
+          <p data-i18n="beat5P">Футбол, забеги, рыбалка, охота, мужские поездки.</p>
+        </div>
+        <div class="beat reveal">
+          <span class="beat__when" data-i18n="beatSeason">По сезону</span>
+          <h3 data-i18n="beat6H">Семейные дни</h3>
+          <p data-i18n="beat6P">Клуб поддерживает крепкие семьи, а не уводит из них.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. Что резидент уносит с собой ───────────────────────────────── -->
+  <section class="band" id="value">
+    <div class="wrap">
+      <div class="band__head reveal">
+        <div>
+          <p class="tag" data-i18n="valueTag">По существу</p>
+          <h2 data-i18n="valueTitle">Что резидент уносит с собой</h2>
+        </div>
+        <p class="band__note" data-i18n="valueNote">
+          Без обещаний про «рост в десять раз». Вот конкретные вещи, которые
+          появляются у человека после вступления.
+        </p>
+      </div>
+
+      <div class="gains">
+        <div class="gain reveal">
+          <b data-i18n="gain1H">Круг, которому можно позвонить</b>
+          <p data-i18n="gain1P">Состав проверен на входе: личная встреча и решение совета. Вопрос уходит не в пустоту, а конкретному человеку, который через это проходил.</p>
+        </div>
+        <div class="gain reveal">
+          <b data-i18n="gain2H">Разбор своего вопроса</b>
+          <p data-i18n="gain2P">Раз в месяц совет директоров берёт запрос резидента в работу. То, что вы тянули полгода, разбирается за один вечер.</p>
+        </div>
+        <div class="gain reveal">
+          <b data-i18n="gain3H">Партнёрства без продаж в лоб</b>
+          <p data-i18n="gain3P">Агрессивные продажи внутри запрещены Кодексом — поэтому здесь говорят по делу, и сделки случаются сами.</p>
+        </div>
+        <div class="gain reveal">
+          <b data-i18n="gain4H">Приложение клуба</b>
+          <p data-i18n="gain4P">Расписание и регистрация, каталог резидентов с нишами и запросами, чаты, обучение, привилегии партнёров, рейтинг активности.</p>
+        </div>
+        <div class="gain reveal">
+          <b data-i18n="gain5H">Среда, где не обсуждают за спиной</b>
+          <p data-i18n="gain5P">Конфиденциальность — одно из самых жёстких правил Кодекса. Всё, что сказано внутри, остаётся внутри.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. Кодекс как обещание остальным ─────────────────────────────── -->
+  <section class="band band--coal" id="code">
+    <div class="wrap code-grid">
+      <div class="reveal">
+        <p class="tag" data-i18n="docTag">Документ клуба</p>
+        <h2 style="font-size:clamp(30px,4.4vw,52px);line-height:1.04;margin-top:14px" data-i18n="codeTitle">Кодекс резидента</h2>
+        <p class="band__note" style="margin-top:18px" data-i18n="codeNote">
+          Кодекс — не список запретов, а обещание, которое каждый резидент даёт
+          остальным. Именно он делает клуб местом, куда можно прийти со своим
+          вопросом. Кандидат читает его до заявки, и согласие фиксируется вместе
+          с версией документа.
+        </p>
+        <div class="hero__actions" style="margin-top:28px">
+          <a class="btn btn--ghost" href="code.html"><span data-i18n="ctaReadFull">Читать полностью</span> <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <ol class="code-list reveal">
+        <li data-i18n="c1">Главное правило — быть экологичным</li>
+        <li data-i18n="c2">Трезвость на официальных мероприятиях</li>
+        <li data-i18n="c3">Семейные и братские ценности</li>
+        <li data-i18n="c4">BURN — не база клиентов</li>
+        <li data-i18n="c5">Полная конфиденциальность</li>
+        <li data-i18n="c6">Честность и открытость</li>
+        <li data-i18n="c7">Финансовая порядочность</li>
+        <li data-i18n="c8">Дисциплина посещения мероприятий</li>
+        <li data-i18n="c9">Уважение к укладу сообщества</li>
+        <li data-i18n="c10">Культура взаимной поддержки</li>
+        <li data-i18n="c11">Ответственность за нарушение</li>
+        <li data-i18n="c12">Основания для исключения</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── 6. Путь в клуб ───────────────────────────────────────────────── -->
+  <section class="band" id="path">
     <div class="wrap">
       <div class="band__head reveal">
         <div>
@@ -190,16 +293,17 @@
           <h2 data-i18n="pathTitle">Путь в клуб — четыре шага</h2>
         </div>
         <p class="band__note" data-i18n="pathNote">
-          Решают обе стороны. Клуб смотрит, подходит ли человек кругу;
-          человек — подходит ли ему клуб. На каждом шаге можно остановиться.
+          Решают обе стороны. Клуб смотрит, подходит ли человек кругу; человек —
+          подходит ли ему клуб. На каждом шаге можно остановиться, и это
+          нормальный исход, а не провал.
         </p>
       </div>
 
-      <div class="path">
+      <div class="path path--light">
         <div class="step reveal">
           <div class="step__dot">01</div>
           <h3 data-i18n="step1H">Заявка</h3>
-          <p data-i18n="step1P">Имя, телефон, компания и согласие с Кодексом. Без согласия заявка не отправляется — это не формальность.</p>
+          <p data-i18n="step1P">Имя, телефон, компания и согласие с Кодексом. Без согласия форма не отправляется — это не формальность.</p>
         </div>
         <div class="step reveal">
           <div class="step__dot">02</div>
@@ -214,67 +318,13 @@
         <div class="step reveal">
           <div class="step__dot">04</div>
           <h3 data-i18n="step4H">Решение совета</h3>
-          <p data-i18n="step4P">Совет клуба принимает решение. Резидент получает карту, доступ в приложение и в чаты — и ответственность за круг.</p>
-        </div>
-      </div>
-
-      <div class="hero__actions reveal" style="margin-top:44px">
-        <a class="btn btn--fire" href="#join">Начать с заявки <span class="arrow">→</span></a>
-        <a class="btn btn--ghost" href="code.html" data-i18n="ctaReadCode">Прочитать Кодекс</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Форматы ───────────────────────────────────────────────────────── -->
-  <section class="band" id="life">
-    <div class="wrap">
-      <div class="band__head reveal">
-        <div>
-          <p class="tag" data-i18n="lifeTag">Что происходит</p>
-          <h2 data-i18n="lifeTitle">Форматы клуба</h2>
-        </div>
-        <p class="band__note" data-i18n="lifeNote">
-          Клуб живёт встречами. Расписание, регистрация и свободные места —
-          в приложении; часть мероприятий открыта для гостей.
-        </p>
-      </div>
-
-      <div class="rows">
-        <div class="row reveal">
-          <div class="row__no">F-01</div>
-          <div class="row__title" data-i18n="f1H">Совет директоров</div>
-          <p class="row__text" data-i18n="f1P">Ежемесячный разбор запросов резидентов и решения по клубу. Официальная часть — без алкоголя.</p>
-        </div>
-        <div class="row reveal">
-          <div class="row__no">F-02</div>
-          <div class="row__title" data-i18n="f2H">Бизнес-завтраки</div>
-          <p class="row__text" data-i18n="f2P">Утро, узкий состав, конкретные задачи и обмен практикой.</p>
-        </div>
-        <div class="row reveal">
-          <div class="row__no">F-03</div>
-          <div class="row__title" data-i18n="f3H">Разборы и стратегические сессии</div>
-          <p class="row__text" data-i18n="f3P">Одна компания, один вопрос, вечер плотной работы.</p>
-        </div>
-        <div class="row reveal">
-          <div class="row__no">F-04</div>
-          <div class="row__title" data-i18n="f4H">Встречи со спикерами</div>
-          <p class="row__text" data-i18n="f4P">Люди с опытом, который нельзя прочитать в книге.</p>
-        </div>
-        <div class="row reveal">
-          <div class="row__no">F-05</div>
-          <div class="row__title" data-i18n="f5H">Спорт и выезды</div>
-          <p class="row__text" data-i18n="f5P">Футбол, забеги, рыбалка, охота, мужские поездки.</p>
-        </div>
-        <div class="row reveal">
-          <div class="row__no">F-06</div>
-          <div class="row__title" data-i18n="f6H">Семейные дни</div>
-          <p class="row__text" data-i18n="f6P">Клуб поддерживает крепкие семьи, а не уводит из них.</p>
+          <p data-i18n="step4P">Совет принимает решение. Резидент получает карту, доступ в приложение и в чаты — и ответственность за круг.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Города ────────────────────────────────────────────────────────── -->
+  <!-- ── 7. Города ────────────────────────────────────────────────────── -->
   <section class="band" id="cities" style="padding-top:0">
     <div class="wrap">
       <div class="band__head reveal">
@@ -311,40 +361,50 @@
     </div>
   </section>
 
-  <!-- ── Кодекс ────────────────────────────────────────────────────────── -->
-  <section class="band band--coal" id="code">
-    <div class="wrap code-grid">
-      <div class="reveal">
-        <p class="tag" data-i18n="docTag">Документ клуба</p>
-        <h2 style="font-size:clamp(30px,4.4vw,52px);line-height:1.04;margin-top:14px" data-i18n="codeTitle">Кодекс резидента</h2>
-        <p class="band__note" style="margin-top:18px" data-i18n="codeNote">
-          Двенадцать разделов о том, как здесь принято себя вести: от
-          трезвости на официальных встречах до полной конфиденциальности.
-          Кандидат читает Кодекс перед заявкой, и согласие с ним
-          фиксируется вместе с версией документа.
-        </p>
-        <div class="hero__actions" style="margin-top:28px">
-          <a class="btn btn--ghost" href="code.html"><span data-i18n="ctaReadFull">Читать полностью</span> <span class="arrow">→</span></a>
+  <!-- ── 8. Вопросы ───────────────────────────────────────────────────── -->
+  <section class="band" id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="band__head reveal">
+        <div>
+          <p class="tag" data-i18n="faqTag">Прежде чем подавать</p>
+          <h2 data-i18n="faqTitle">Вопросы, которые задают чаще всего</h2>
         </div>
+        <p class="band__note" data-i18n="faqNote">
+          Если вашего вопроса здесь нет — задайте его менеджеру на звонке после
+          заявки. Это и есть его работа.
+        </p>
       </div>
-      <ol class="code-list reveal">
-        <li data-i18n="c1">Главное правило — быть экологичным</li>
-        <li data-i18n="c2">Трезвость на официальных мероприятиях</li>
-        <li data-i18n="c3">Семейные и братские ценности</li>
-        <li data-i18n="c4">BURN — не база клиентов</li>
-        <li data-i18n="c5">Полная конфиденциальность</li>
-        <li data-i18n="c6">Честность и открытость</li>
-        <li data-i18n="c7">Финансовая порядочность</li>
-        <li data-i18n="c8">Дисциплина посещения мероприятий</li>
-        <li data-i18n="c9">Уважение к укладу сообщества</li>
-        <li data-i18n="c10">Культура взаимной поддержки</li>
-        <li data-i18n="c11">Ответственность за нарушение</li>
-        <li data-i18n="c12">Основания для исключения</li>
-      </ol>
+
+      <div class="faq">
+        <details class="qa reveal">
+          <summary data-i18n="q1">Сколько стоит резидентство?</summary>
+          <p data-i18n="a1">Условия участия менеджер клуба называет на звонке после заявки — вместе с тем, что входит в членство и как оплачиваются отдельные мероприятия. Все суммы в тенге.</p>
+        </details>
+        <details class="qa reveal">
+          <summary data-i18n="q2">Обязательно ходить на все встречи?</summary>
+          <p data-i18n="a2">Нет, но дисциплина посещения — отдельный раздел Кодекса. Клуб держится на тех, кто приходит; регулярные пропуски обсуждаются советом.</p>
+        </details>
+        <details class="qa reveal">
+          <summary data-i18n="q3">Я не из Алматы. Можно вступить?</summary>
+          <p data-i18n="a3">Сейчас клуб работает в Алматы, Астана и Шымкент готовятся. Подать заявку можно уже — при открытии вашего города вы попадёте в первый набор.</p>
+        </details>
+        <details class="qa reveal">
+          <summary data-i18n="q4">Можно прийти посмотреть до вступления?</summary>
+          <p data-i18n="a4">Да. Часть мероприятий открыта для гостей — на них и происходит знакомство с резидентами, третий шаг пути.</p>
+        </details>
+        <details class="qa reveal">
+          <summary data-i18n="q5">Что если совет откажет?</summary>
+          <p data-i18n="a5">Это нормальный исход, а не приговор. Менеджер объяснит причину; подать заявку повторно можно, когда изменятся обстоятельства.</p>
+        </details>
+        <details class="qa reveal">
+          <summary data-i18n="q6">Можно продавать свои услуги резидентам?</summary>
+          <p data-i18n="a6">Продажи в лоб запрещены Кодексом. Рассказать, чем вы полезны, можно в каталоге резидентов — дальше человек решает сам.</p>
+        </details>
+      </div>
     </div>
   </section>
 
-  <!-- ── Заявка ────────────────────────────────────────────────────────── -->
+  <!-- ── 9. Заявка ────────────────────────────────────────────────────── -->
   <section class="band" id="join" style="padding-top:0">
     <div class="wrap form-wrap">
       <div class="reveal">
@@ -402,6 +462,39 @@
     </div>
   </section>
 
+  <!-- ── 10. Контакты ─────────────────────────────────────────────────── -->
+  <section class="band band--tight" id="contacts">
+    <div class="wrap">
+      <div class="band__head reveal">
+        <div>
+          <p class="tag" data-i18n="contactsTag">Связь</p>
+          <h2 data-i18n="contactsTitle">Контакты клуба</h2>
+        </div>
+        <p class="band__note" data-i18n="contactsNote">
+          По вопросам вступления, партнёрства и участия в мероприятиях.
+        </p>
+      </div>
+
+      <div class="contacts">
+        <a class="contact reveal" href="https://www.instagram.com/burn_kz/" target="_blank" rel="noopener">
+          <span class="contact__label">Instagram</span>
+          <b>@burn_kz</b>
+          <span class="contact__note" data-i18n="contactIg">Анонсы встреч и жизнь клуба</span>
+        </a>
+        <a class="contact reveal" href="#join">
+          <span class="contact__label" data-i18n="contactFormLabel">Заявка</span>
+          <b data-i18n="contactFormValue">Форма на сайте</b>
+          <span class="contact__note" data-i18n="contactFormNote">Менеджер перезванивает после заявки</span>
+        </a>
+        <a class="contact reveal" href="https://testflight.apple.com/join/r3nkECEA" target="_blank" rel="noopener">
+          <span class="contact__label" data-i18n="contactAppLabel">Приложение</span>
+          <b>TestFlight</b>
+          <span class="contact__note" data-i18n="contactAppNote">Доступ по приглашению резидента</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="foot">
@@ -416,16 +509,16 @@
       </div>
       <div class="foot__col reveal">
         <strong data-i18n="footClub">Клуб</strong>
-        <a href="#club" data-i18n="footAbout">О сообществе</a>
+        <a href="#who" data-i18n="navWho">Кому сюда</a>
+        <a href="#year" data-i18n="navYear">Год в клубе</a>
         <a href="#path" data-i18n="navPath">Как вступить</a>
-        <a href="#life" data-i18n="navLife">Форматы</a>
         <a href="code.html" data-i18n="codeTitle">Кодекс резидента</a>
       </div>
       <div class="foot__col reveal">
         <strong data-i18n="footContact">Связь</strong>
         <a href="https://www.instagram.com/burn_kz/" target="_blank" rel="noopener">Instagram</a>
         <a href="#join" data-i18n="ctaApply">Подать заявку</a>
-        <a href="https://testflight.apple.com/join/r3nkECEA" target="_blank" rel="noopener" data-i18n="footApp">Приложение</a>
+        <a href="#faq" data-i18n="navFaq">Вопросы</a>
       </div>
       <div class="foot__col reveal">
         <strong data-i18n="footDocs">Документы</strong>
@@ -434,7 +527,7 @@
       </div>
     </div>
     <div class="foot__legal">
-      <span>© <span id="year">2026</span> BURN Club</span>
+      <span>© <span id="year-now">2026</span> BURN Club</span>
       <span data-i18n="footCity">Алматы, Казахстан</span>
       <span>ALA · NQZ · CIT</span>
     </div>

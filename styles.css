@@ -506,45 +506,6 @@ p { margin: 0; }
   line-height: 1.62;
 }
 
-/* Плитки-документы: пунктирная рамка и мононумерация. Сама метафора
-   страницы бумажная, и здесь рамка уместна — это листы досье. */
-.tiles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
-}
-
-.tile {
-  padding: 24px;
-  border: 1.5px dashed var(--line-strong);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.03);
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-}
-
-.tile:hover {
-  transform: translateY(-3px);
-  border-style: solid;
-  border-color: var(--ember);
-  background: rgba(255, 90, 31, 0.08);
-  box-shadow: 0 30px 60px -30px rgba(255, 90, 31, 0.5);
-}
-
-.tile__no {
-  font: 500 11px/1 var(--mono);
-  letter-spacing: 0.14em;
-  color: var(--ember);
-}
-
-.tile h3 { margin-top: 14px; font-size: 19px; line-height: 1.25; }
-
-.tile p {
-  margin-top: 10px;
-  color: var(--ink-soft);
-  font-size: 15px;
-  line-height: 1.6;
-}
-
 /* ── Путь в клуб — шаги на пунктирной линии ────────────────────────────── */
 
 .path {
@@ -594,36 +555,6 @@ p { margin: 0; }
   font-size: 15px;
   line-height: 1.6;
   color: rgba(246, 241, 232, 0.66);
-}
-
-/* ── Форматы: строки с пунктиром ───────────────────────────────────────── */
-
-.rows { display: grid; }
-
-.row {
-  display: grid;
-  grid-template-columns: 3rem minmax(0, 1fr) minmax(0, 1.2fr);
-  gap: clamp(14px, 3vw, 40px);
-  align-items: baseline;
-  padding: 22px 0;
-  border-bottom: 1.5px dashed var(--line-strong);
-}
-
-.row:first-child { border-top: 1.5px dashed var(--line-strong); }
-
-.row__no {
-  font: 500 11px/1 var(--mono);
-  letter-spacing: 0.1em;
-  color: var(--ember);
-}
-
-.row__title { font: 700 19px/1.25 var(--display); letter-spacing: -0.02em; }
-
-.row__text { color: var(--ink-soft); font-size: 15px; line-height: 1.6; }
-
-@media (max-width: 720px) {
-  .row { grid-template-columns: 2.4rem minmax(0, 1fr); }
-  .row__text { grid-column: 2; }
 }
 
 /* ── Города — штампы ───────────────────────────────────────────────────── */
@@ -1102,31 +1033,6 @@ button[disabled] { opacity: 0.45; cursor: not-allowed; }
   to { transform: translateX(-50%); }
 }
 
-/* Плитки: крупная бледная цифра в углу и акцентная линия сверху. */
-.tile {
-  position: relative;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.tile::before {
-  content: counter(tile, decimal-leading-zero);
-  counter-increment: tile;
-  position: absolute;
-  right: 14px;
-  bottom: -18px;
-  font: 700 84px/1 var(--display);
-  letter-spacing: -0.05em;
-  color: rgba(247, 239, 227, 0.06);
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.tiles { counter-reset: tile; }
-
-.tile:hover::before { color: rgba(232, 76, 17, 0.12); transform: translateY(-6px); }
-
-.tile:hover { box-shadow: 0 30px 50px -30px rgba(0, 0, 0, 0.35); }
-
 /* Тёмная плашка пути: свечение углей и зерно, чтобы чернота не была мёртвой. */
 .band--coal { position: relative; overflow: hidden; }
 
@@ -1191,11 +1097,6 @@ button[disabled] { opacity: 0.45; cursor: not-allowed; }
 .city > * { position: relative; }
 .city .city__code { position: absolute; }
 
-/* Форматы: строка подсвечивается и номер загорается. */
-.row { transition: background 0.2s ease; border-radius: 12px; }
-.row:hover { background: rgba(255, 90, 31, 0.07); }
-.row:hover .row__no { color: var(--ember); }
-
 /* Телефон: слегка наклонён и парит — устройство, а не скриншот. */
 .phone {
   transform: rotate(-4deg);
@@ -1235,9 +1136,13 @@ button[disabled] { opacity: 0.45; cursor: not-allowed; }
 .reveal { transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.25, 1), transform 0.7s cubic-bezier(0.2, 0.9, 0.25, 1), filter 0.7s ease; }
 
 /* Каскад плиток и шагов: соседи появляются с шагом, а не разом. */
-.tiles .reveal:nth-child(2), .path .reveal:nth-child(2), .cities .reveal:nth-child(2) { transition-delay: 0.08s; }
-.tiles .reveal:nth-child(3), .path .reveal:nth-child(3), .cities .reveal:nth-child(3) { transition-delay: 0.16s; }
-.tiles .reveal:nth-child(4), .path .reveal:nth-child(4) { transition-delay: 0.24s; }
+.cadence .reveal:nth-child(2), .path .reveal:nth-child(2), .cities .reveal:nth-child(2),
+.contacts .reveal:nth-child(2), .split .reveal:nth-child(2) { transition-delay: 0.08s; }
+.cadence .reveal:nth-child(3), .path .reveal:nth-child(3), .cities .reveal:nth-child(3),
+.contacts .reveal:nth-child(3) { transition-delay: 0.16s; }
+.cadence .reveal:nth-child(4), .path .reveal:nth-child(4) { transition-delay: 0.24s; }
+.cadence .reveal:nth-child(5) { transition-delay: 0.32s; }
+.cadence .reveal:nth-child(6) { transition-delay: 0.4s; }
 
 /* Выделение текста — в цвет клуба. */
 ::selection { background: var(--ember); color: #fff; }
@@ -1304,11 +1209,6 @@ button[disabled] { opacity: 0.45; cursor: not-allowed; }
 /* Заголовки секций — тёплый отсвет, чтобы белый текст не был холодным. */
 .band__head h2, .foot h3, .doc h1 { text-shadow: 0 0 40px rgba(255, 90, 31, 0.25); }
 
-/* Плитки: пунктир пламенный, номер в углу горит при наведении. */
-.tile { border-color: rgba(255, 90, 31, 0.35); }
-.tile:hover::before { color: rgba(255, 90, 31, 0.28); }
-.tile__no { color: var(--flame); }
-
 /* Печь: тёмная плашка пути — жар снизу и зерно. */
 .band--glow::before {
   left: 50%;
@@ -1322,9 +1222,6 @@ button[disabled] { opacity: 0.45; cursor: not-allowed; }
 .path::before { border-top-color: rgba(255, 90, 31, 0.35); }
 .step__dot { background: var(--coal-2); border-color: rgba(255, 90, 31, 0.4); }
 .step:first-child .step__dot { background: var(--fire); color: #1a0a04; box-shadow: 0 0 30px rgba(255, 90, 31, 0.8); }
-
-/* Строки форматов: номер пламенем. */
-.row__no { color: var(--flame); }
 
 /* Кодекс: номера пунктов пламенем и свечение списка. */
 .code-list li::before { color: var(--flame); }
@@ -1416,49 +1313,256 @@ button, .btn, .consent { cursor: pointer; }
   .top__nav a { min-height: 44px; display: inline-flex; align-items: center; }
 }
 
-/* ── Клуб в цифрах ─────────────────────────────────────────────────────── */
 
-.band--tight { padding: clamp(40px, 6vh, 70px) 0; }
+/* ── Честный фильтр: кому сюда и кому не сюда ──────────────────────────── */
 
-.stats {
+.split {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
 }
 
-@media (max-width: 860px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 780px) { .split { grid-template-columns: 1fr; } }
 
-.stat {
-  padding: 22px 20px;
+.fit {
+  padding: clamp(22px, 3vw, 32px);
+  border-radius: 18px;
   border: 1.5px solid var(--line);
-  border-left: 2px solid rgba(255, 90, 31, 0.55);
-  border-radius: 14px;
   background: rgba(255, 255, 255, 0.03);
 }
 
-.stat b {
-  display: block;
-  font: 700 clamp(34px, 4vw, 52px)/1 var(--display);
-  letter-spacing: -0.03em;
-  background: var(--fire);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-variant-numeric: tabular-nums;
+.fit--yes { border-color: rgba(255, 90, 31, 0.45); }
+.fit--no { border-style: dashed; background: transparent; }
+
+.fit__label {
+  font: 700 12px/1 var(--mono);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--flame);
 }
 
-.stat span {
-  display: block;
-  margin-top: 10px;
-  font: 500 13px/1.45 var(--body);
+.fit--no .fit__label { color: var(--muted); }
+
+.fit ul {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.fit li {
+  position: relative;
+  padding-left: 30px;
+  font-size: 16px;
+  line-height: 1.55;
   color: var(--ink-soft);
 }
+
+/* Маркер несёт смысл, поэтому он не эмодзи и не только цвет: галочка против
+   косой черты читается и в чёрно-белой печати, и дальтоником. */
+.fit li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font: 700 15px/1.5 var(--mono);
+}
+
+.fit--yes li::before { content: "✓"; color: var(--ember); }
+.fit--no li::before { content: "✕"; color: var(--muted); }
+.fit--no li { color: var(--muted); }
+
+/* ── Год в клубе ───────────────────────────────────────────────────────── */
+
+/* Двенадцать точек — месяцы. Четыре горят: столько встреч в клубе за квартал
+   при обычном ритме. Это украшение, поэтому оно aria-hidden. */
+.year {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 34px;
+}
+
+.year i {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(247, 239, 227, 0.16);
+}
+
+.year i:nth-child(3n + 1) {
+  background: var(--fire);
+  box-shadow: 0 0 14px rgba(255, 90, 31, 0.7);
+}
+
+.cadence {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 14px;
+}
+
+.beat {
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(247, 239, 227, 0.12);
+  background: rgba(247, 239, 227, 0.04);
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.beat:hover {
+  border-color: rgba(255, 90, 31, 0.6);
+  background: rgba(255, 90, 31, 0.08);
+  transform: translateY(-3px);
+}
+
+.beat__when {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 90, 31, 0.45);
+  font: 500 10px/1 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--flame);
+}
+
+.beat h3 { margin-top: 16px; font-size: 19px; line-height: 1.25; }
+
+.beat p {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(247, 239, 227, 0.68);
+}
+
+/* ── Что резидент уносит с собой ───────────────────────────────────────── */
+
+.gains { counter-reset: gain; display: grid; }
+
+/* Строки, разделённые волосяной линией, а не набор коробок: перечисление
+   ценности — это список, и выглядеть он должен списком. */
+.gain {
+  counter-increment: gain;
+  display: grid;
+  grid-template-columns: 3.4rem minmax(0, 22ch) minmax(0, 1fr);
+  gap: clamp(14px, 3vw, 36px);
+  align-items: baseline;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.gain:first-child { border-top: 1px solid var(--line); }
+
+.gain::before {
+  content: counter(gain, decimal-leading-zero);
+  font: 500 13px/1.6 var(--mono);
+  letter-spacing: 0.1em;
+  color: var(--flame);
+}
+
+.gain b { font: 700 19px/1.3 var(--display); letter-spacing: -0.02em; }
+
+.gain p { color: var(--ink-soft); font-size: 15px; line-height: 1.62; }
+
+@media (max-width: 820px) {
+  .gain { grid-template-columns: 2.6rem minmax(0, 1fr); }
+  .gain p { grid-column: 2; }
+}
+
+/* ── Вопросы ───────────────────────────────────────────────────────────── */
+
+.faq { display: grid; }
+
+.qa {
+  border-bottom: 1px solid var(--line);
+  padding: 4px 0;
+}
+
+.qa:first-child { border-top: 1px solid var(--line); }
+
+.qa summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 44px 20px 0;
+  position: relative;
+  font: 700 17px/1.4 var(--body);
+  transition: color 0.2s ease;
+}
+
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary:hover { color: var(--flame); }
+
+/* Плюс, который становится минусом: состояние видно и без цвета. */
+.qa summary::after,
+.qa summary::before {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 15px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--ember);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.qa summary::before { transform: translateY(-50%) rotate(90deg); }
+.qa summary::after { transform: translateY(-50%); }
+.qa[open] summary::before { transform: translateY(-50%) rotate(0deg); opacity: 0; }
+
+.qa p {
+  padding: 0 44px 22px 0;
+  max-width: 72ch;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+/* ── Контакты ──────────────────────────────────────────────────────────── */
+
+.contacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+}
+
+.contact {
+  display: grid;
+  gap: 8px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1.5px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  text-decoration: none;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.contact:hover {
+  border-color: rgba(255, 90, 31, 0.6);
+  background: rgba(255, 90, 31, 0.08);
+  transform: translateY(-3px);
+}
+
+.contact__label {
+  font: 500 10px/1 var(--mono);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact b { font: 700 20px/1.2 var(--display); letter-spacing: -0.02em; }
+
+.contact__note { font-size: 14px; line-height: 1.5; color: var(--ink-soft); }
+
+/* Путь теперь стоит на обычном фоне, а не на угольной плашке. */
+.path--light::before { border-top-color: rgba(255, 90, 31, 0.3); }
 
 
 /* ── Переключатель языка ───────────────────────────────────────────────── */
 
 .langs {
   display: flex;
+  flex-shrink: 0;
   gap: 4px;
   padding: 3px;
   border: 1px solid var(--line);
@@ -1490,25 +1594,20 @@ button, .btn, .consent { cursor: pointer; }
 /* На узком экране коды городов уходят, а выбор языка остаётся: это
    требование к сайту, а не украшение. */
 @media (max-width: 980px) {
-  .langs { order: 3; }
   .langs button { min-width: 36px; min-height: 36px; }
 }
 
-@media (max-width: 420px) {
-  .top { gap: 10px; padding-left: 16px; padding-right: 16px; }
+/* На телефоне шапка обязана остаться в одну строку: выбор языка и кнопка
+   заявки — два элемента, ради которых она вообще нужна. */
+@media (max-width: 560px) {
+  .top { gap: 8px; padding: 10px 14px; }
   .top__mark small { display: none; }
-}
-
-/* Пометка о языке оригинала документа. */
-.doc__note {
-  margin: 14px 0 0;
-  padding: 12px 16px;
-  border-left: 2px solid var(--ember);
-  background: rgba(255, 90, 31, 0.08);
-  border-radius: 0 10px 10px 0;
-  font: 500 14px/1.5 var(--body);
-  color: var(--ink-soft);
-  max-width: 64ch;
+  .top__mark img { width: 30px; height: 30px; }
+  .top__mark b { font-size: 14px; }
+  .langs { padding: 2px; gap: 2px; }
+  .langs button { min-width: 30px; min-height: 34px; padding: 0 6px; font-size: 10px; }
+  .btn--sm { padding: 10px 14px; font-size: 12px; min-height: 40px; }
+  .btn--sm .arrow { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

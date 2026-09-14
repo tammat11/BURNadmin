@@ -112,7 +112,7 @@ if (top) {
   addEventListener("scroll", onScroll, { passive: true });
 }
 
-const year = document.getElementById("year");
+const year = document.getElementById("year-now");
 if (year) year.textContent = String(new Date().getFullYear());
 
 /* ── Счётчики в блоке «Клуб в цифрах» ──────────────────────────────────── */
