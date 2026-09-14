@@ -11,10 +11,10 @@
 <meta property="og:description" content="Клуб для тех, кто уже построил. Алматы.">
 <meta property="og:image" content="assets/logo-full.png">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700;6..96,900&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts.css">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="fire.css">
+<link rel="stylesheet" href="middle.css">
 </head>
 <body data-page="index">
 
@@ -23,105 +23,43 @@
 <a class="side-tab" href="#join" data-i18n="sideTab">Набор резидентов открыт · Алматы</a>
 
 <header class="top" id="top">
-  <a class="top__mark" href="#">
-    <img src="assets/crest.png" alt="">
-    <span><b>BURN</b><small data-i18n="brandSub">Business club</small></span>
-  </a>
-  <div class="top__codes" aria-label="Города клуба">
-    <span class="is-live">ALA</span>
-    <span>NQZ</span>
-    <span>CIT</span>
-  </div>
-  <div class="langs" role="group" aria-label="Язык сайта / Сайт тілі / Site language">
-    <button type="button" data-lang="ru" class="is-on">RU</button>
-    <button type="button" data-lang="kk">KZ</button>
-    <button type="button" data-lang="en">EN</button>
-  </div>
-  <nav class="top__nav">
-    <a href="#who" data-i18n="navWho">Кому сюда</a>
-    <a href="#year" data-i18n="navYear">Год в клубе</a>
-    <a href="#path" data-i18n="navPath">Как вступить</a>
-    <a href="code.html" data-i18n="navCode">Кодекс</a>
-    <a href="#faq" data-i18n="navFaq">Вопросы</a>
-  </nav>
-  <a class="btn btn--fire btn--sm" href="#join"><span data-i18n="ctaApply">Подать заявку</span> <span class="arrow">→</span></a>
+  <a class="top__mark" href="#main" aria-label="BURN — главная"><img src="assets/crest.png" alt=""><b>BURN</b></a>
+  <nav class="top__nav" aria-label="Главная навигация"><a href="#who" data-i18n="navClub">Клуб</a><a href="code.html" data-i18n="navCode">Кодекс</a><a href="#path" data-i18n="navPath">Как вступить</a></nav>
+  <div class="langs" role="group" aria-label="Язык сайта / Сайт тілі / Site language"><button type="button" data-lang="ru" class="is-on">RU</button><button type="button" data-lang="kk">KZ</button><button type="button" data-lang="en">EN</button></div>
+  <details class="mobile-menu"><summary aria-label="Меню"><span data-i18n="menuLabel">Меню</span></summary><nav aria-label="Разделы сайта"><a href="#who" data-i18n="navClub">Клуб</a><a href="#year" data-i18n="navYear">Год в клубе</a><a href="code.html" data-i18n="navCode">Кодекс</a><a href="#path" data-i18n="navPath">Как вступить</a><a href="#join" data-i18n="ctaApply">Подать заявку</a></nav></details>
 </header>
-
 <main id="main">
-
-  <!-- ── 1. Позиция клуба ─────────────────────────────────────────────── -->
-  <section class="hero">
-    <div class="wrap hero__grid">
-      <div>
-        <div class="stamp">
-          <span data-i18n="stampTitle">Закрытый клуб</span>
-          <small data-i18n="stampSub">Алматы · с 2024</small>
-        </div>
-        <p class="tag" style="display:flex" data-i18n="heroTag">Набор резидентов на сезон открыт</p>
-        <h1 data-i18n-html="heroTitle">Клуб для тех,<br>кто уже <em>построил</em></h1>
-        <p class="hero__lede" data-i18n="heroLede">
-          Не курсы, не нетворкинг по билету и не чат с холодными рассылками.
-          Круг предпринимателей с действующим бизнесом, куда попадают по
-          заявке, личной встрече и решению совета.
-        </p>
-        <div class="hero__actions">
-          <a class="btn btn--fire" href="#join"><span data-i18n="ctaApply">Подать заявку</span> <span class="arrow">→</span></a>
-          <a class="btn btn--ghost" href="#who" data-i18n="ctaCheck">Проверить, моё ли это</a>
-        </div>
-        <p class="hero__hint" data-i18n="heroHint">Сначала честный фильтр — кому сюда не надо</p>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__stage">
+      <img class="hero__mask" src="assets/obsidian-mask.jpg" alt="" width="1024" height="1536" fetchpriority="high">
+      <aside class="hero__rail" aria-label="BURN Club"><div><b>BURN CLUB</b><p data-i18n-html="heroLocation">ПРЕДПРИНИМАТЕЛИ<br>АЛМАТЫ</p></div><p class="hero__rail-bottom" data-i18n-html="heroValues">ЛЮДИ<br>ИДЕИ<br>БИЗНЕС<br>АЛМАТЫ</p></aside>
+      <div class="hero__content">
+        <div class="hero__word" aria-hidden="true">BURN</div>
+        <h1 id="hero-title" data-i18n-html="heroTitle">Окружение<br>решает.</h1>
+        <p class="hero__lede" data-i18n-html="heroLede">Закрытый клуб<br>предпринимателей. Алматы.</p>
+        <a class="btn btn--fire" href="#join"><span data-i18n="ctaResident">Стать резидентом</span><img src="assets/arrow-up-right.svg" alt="" width="22" height="22"></a>
       </div>
-
-      <!-- Карта резидента: то, что получает дошедший до конца пути. -->
-      <aside class="card" aria-label="Карта резидента BURN">
-        <div class="card__head">
-          <span class="tag" data-i18n="cardTag">Карта резидента</span>
-          <span>№ BRN · 0001</span>
-        </div>
-        <div class="card__crest">
-          <img src="assets/crest.png" alt="">
-          <div>
-            <b>BURN Club</b>
-            <span data-i18n="cardSub">Сообщество предпринимателей</span>
-          </div>
-        </div>
-        <div class="card__fields">
-          <div class="card__field"><small data-i18n="fieldCity">Город</small><b data-i18n="almaty">Алматы</b></div>
-          <div class="card__field"><small data-i18n="fieldLevel">Уровень</small><b>BURN PRO</b></div>
-          <div class="card__field"><small data-i18n="fieldStatus">Статус</small><b data-i18n="resident">Резидент</b></div>
-          <div class="card__field"><small data-i18n="navCode">Кодекс</small><b data-i18n="codeAccepted">Принят · ред. 2026</b></div>
-        </div>
-        <div class="card__tear"></div>
-        <div class="card__chips" aria-label="Города">
-          <span class="chip is-live" data-i18n="almaty">Алматы</span>
-          <span class="chip" data-i18n="astanaSoon">Астана · скоро</span>
-          <span class="chip" data-i18n="shymkentSoon">Шымкент · скоро</span>
-        </div>
-        <p class="card__foot" data-i18n="cardFoot">
-          Карту получает тот, кого принял совет. Она открывает приложение,
-          каталог резидентов, чаты клуба и привилегии партнёров своего города.
-        </p>
-        <div class="card__code" aria-hidden="true">
-          <span class="bars"></span>
-          <span>BRN·ALA·2026·0001</span>
-        </div>
-      </aside>
+      <span class="hero__annotation hero__annotation--top" data-i18n-html="heroBeyond">БОЛЬШЕ<br>ЧЕМ БИЗНЕС</span><span class="hero__annotation hero__annotation--bottom" data-i18n-html="heroPeople">СИЛА<br>В ЛЮДЯХ</span>
     </div>
   </section>
-
-  </div>
+  <section class="principles" aria-labelledby="principles-title"><div class="wrap principles__grid">
+    <div class="principles__title"><span>01 /</span><h2 id="principles-title" data-i18n="principlesTitle">СВОЙ КРУГ</h2></div>
+    <div><h3 data-i18n="principleExperience">Опыт</h3><p data-i18n="principleExperienceText">Обмен реальным предпринимательским опытом.</p></div>
+    <div><h3 data-i18n="principleTrust">Доверие</h3><p data-i18n="principleTrustText">Честный диалог в закрытом кругу.</p></div>
+    <div><h3 data-i18n="principleAction">Действие</h3><p data-i18n="principleActionText">Знакомства, которые приводят к результатам.</p></div>
+  </div></section>
 
   <!-- ── 2. Честный фильтр ────────────────────────────────────────────── -->
-  <section class="band" id="who">
+  <section class="band" id="who" data-middle-section>
     <div class="wrap">
       <div class="band__head reveal">
         <div>
           <p class="tag" data-i18n="whoTag">Честный фильтр</p>
-          <h2 data-i18n="whoTitle">Сначала о том, кому сюда не надо</h2>
+          <h2 data-i18n="whoTitle">Не случайные знакомства.
+Свои люди.</h2>
         </div>
         <p class="band__note" data-i18n="whoNote">
-          Закрытый клуб держится не списком привилегий, а тем, кого в нём нет.
-          Прочитайте правую колонку первой: если узнали себя — сэкономите время
-          и себе, и совету.
+          Окружение определяет масштаб. Нам важны действующий бизнес, открытость и готовность быть частью круга. Сверьте свои ожидания с принципами клуба.
         </p>
       </div>
 
@@ -129,7 +67,7 @@
         <div class="fit fit--yes reveal">
           <p class="fit__label" data-i18n="fitYes">Вам сюда</p>
           <ul>
-            <li data-i18n="yes1">У вас действующий бизнес, а не идея на стадии презентации.</li>
+            <li data-i18n="yes1">Ваш бизнес работает и делает от 200 000 000 ₸ оборота в год.</li>
             <li data-i18n="yes2">Вы готовы вынести свой вопрос на разбор и услышать неудобное.</li>
             <li data-i18n="yes3">Вам ценнее один разговор по делу, чем сто контактов в телефоне.</li>
             <li data-i18n="yes4">Вы придёте на встречу сами, а не пришлёте вместо себя менеджера.</li>
@@ -139,7 +77,7 @@
           <p class="fit__label" data-i18n="fitNo">Вам не сюда</p>
           <ul>
             <li data-i18n="no1">Нужна база клиентов и площадка для продаж в лоб.</li>
-            <li data-i18n="no2">Ищете инвестора под идею, за которой пока нет выручки.</li>
+            <li data-i18n="no2">Ищете инвестора под идею, за которой пока нет оборота.</li>
             <li data-i18n="no3">Хотите «посмотреть, что за клуб», а решать потом.</li>
             <li data-i18n="no4">Правила сообщества кажутся лишней формальностью.</li>
           </ul>
@@ -149,7 +87,7 @@
   </section>
 
   <!-- ── 3. Год в клубе ───────────────────────────────────────────────── -->
-  <section class="band band--fill" id="year">
+  <section class="band band--fill" id="year" data-middle-section>
     <div class="wrap">
       <div class="band__head reveal">
         <div>
@@ -167,43 +105,43 @@
         <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
       </div>
 
-      <div class="cadence">
-        <div class="beat reveal">
-          <span class="beat__when" data-i18n="beatMonthly">Ежемесячно</span>
+      <div class="cadence cadence--featured">
+        <div class="beat reveal"><span class="beat__number" aria-hidden="true">01</span>
+          <span class="beat__when" data-i18n="beatMonthlyRequired">Ежемесячно · обязательно</span>
           <h3 data-i18n="beat1H">Совет директоров</h3>
-          <p data-i18n="beat1P">Разбор запросов резидентов и решения по клубу. Официальная часть — без алкоголя.</p>
+          <p data-i18n="beat1P">Постоянная группа ищет решения по задачам резидентов. Подготовка обязательна, содержание встречи конфиденциально.</p>
         </div>
-        <div class="beat reveal">
+        <div class="beat reveal"><span class="beat__number" aria-hidden="true">02</span>
           <span class="beat__when" data-i18n="beatMonthly">Ежемесячно</span>
-          <h3 data-i18n="beat2H">Бизнес-завтраки</h3>
-          <p data-i18n="beat2P">Утро, узкий состав, конкретные задачи и обмен практикой.</p>
+          <h3 data-i18n="beat2H">Бизнес-завтрак</h3>
+          <p data-i18n="beat2P">Утренняя встреча с выступлениями приглашённых спикеров и экспертов.</p>
         </div>
-        <div class="beat reveal">
+        <div class="beat reveal"><span class="beat__number" aria-hidden="true">03</span>
           <span class="beat__when" data-i18n="beatByRequest">По запросу</span>
-          <h3 data-i18n="beat3H">Разборы и стратегические сессии</h3>
-          <p data-i18n="beat3P">Одна компания, один вопрос, вечер плотной работы.</p>
+          <h3 data-i18n="beat3H">Разбор</h3>
+          <p data-i18n="beat3P">Бизнес-кейсы, задачи и запросы разбираются вместе с предпринимателями и приглашёнными экспертами.</p>
         </div>
-        <div class="beat reveal">
+        <div class="beat reveal"><span class="beat__number" aria-hidden="true">04</span>
           <span class="beat__when" data-i18n="beatQuarterly">Раз в квартал</span>
-          <h3 data-i18n="beat4H">Встречи со спикерами</h3>
-          <p data-i18n="beat4P">Люди с опытом, который нельзя прочитать в книге.</p>
+          <h3 data-i18n="beat4H">Челленджи и практики роста</h3>
+          <p data-i18n="beat4P">Активности, которые развивают личные и предпринимательские навыки резидента.</p>
         </div>
-        <div class="beat reveal">
-          <span class="beat__when" data-i18n="beatSeason">По сезону</span>
-          <h3 data-i18n="beat5H">Спорт и выезды</h3>
-          <p data-i18n="beat5P">Футбол, забеги, рыбалка, охота, мужские поездки.</p>
+        <div class="beat reveal"><span class="beat__number" aria-hidden="true">05</span>
+          <span class="beat__when" data-i18n="beatByRequest">По запросу</span>
+          <h3 data-i18n="beat5H">Инвест-группа и биржа проектов</h3>
+          <p data-i18n="beat5P">Обмен инвестиционными предложениями, поиск партнёров и обсуждение проектов.</p>
         </div>
-        <div class="beat reveal">
+        <div class="beat reveal"><span class="beat__number" aria-hidden="true">06</span>
           <span class="beat__when" data-i18n="beatSeason">По сезону</span>
-          <h3 data-i18n="beat6H">Семейные дни</h3>
-          <p data-i18n="beat6P">Клуб поддерживает крепкие семьи, а не уводит из них.</p>
+          <h3 data-i18n="beat6H">Баня, выезды и путешествия</h3>
+          <p data-i18n="beat6P">Закрытые неформальные встречи и совместные поездки резидентов.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ── 4. Что резидент уносит с собой ───────────────────────────────── -->
-  <section class="band" id="value">
+  <section class="band" id="value" data-middle-section>
     <div class="wrap">
       <div class="band__head reveal">
         <div>
@@ -216,37 +154,24 @@
         </p>
       </div>
 
+      <div class="value-layout"><div class="member-card" aria-label="Карта резидента BURN"><div class="member-card__top"><span data-i18n="cardTag">Карта резидента</span><span>ALMATY</span></div><img src="assets/crest.png" alt="" width="100" height="100"><b>BURN</b><div class="member-card__bottom"><span>PRIVATE BUSINESS CLUB</span><span data-i18n="resident">Резидент</span></div></div>
       <div class="gains">
-        <div class="gain reveal">
-          <b data-i18n="gain1H">Круг, которому можно позвонить</b>
-          <p data-i18n="gain1P">Состав проверен на входе: личная встреча и решение совета. Вопрос уходит не в пустоту, а конкретному человеку, который через это проходил.</p>
-        </div>
-        <div class="gain reveal">
-          <b data-i18n="gain2H">Разбор своего вопроса</b>
-          <p data-i18n="gain2P">Раз в месяц совет директоров берёт запрос резидента в работу. То, что вы тянули полгода, разбирается за один вечер.</p>
-        </div>
-        <div class="gain reveal">
-          <b data-i18n="gain3H">Партнёрства без продаж в лоб</b>
-          <p data-i18n="gain3P">Агрессивные продажи внутри запрещены Кодексом — поэтому здесь говорят по делу, и сделки случаются сами.</p>
-        </div>
-        <div class="gain reveal">
-          <b data-i18n="gain4H">Приложение клуба</b>
-          <p data-i18n="gain4P">Расписание и регистрация, каталог резидентов с нишами и запросами, чаты, обучение, привилегии партнёров, рейтинг активности.</p>
-        </div>
-        <div class="gain reveal">
-          <b data-i18n="gain5H">Среда, где не обсуждают за спиной</b>
-          <p data-i18n="gain5P">Конфиденциальность — одно из самых жёстких правил Кодекса. Всё, что сказано внутри, остаётся внутри.</p>
-        </div>
+        <details open class="gain" name="resident-benefits"><summary data-i18n="gain1H">Круг, которому можно позвонить</summary><p data-i18n="gain1P">Состав проверен на входе: личная встреча и решение совета. Вопрос уходит не в пустоту, а конкретному человеку, который через это проходил.</p></details>
+        <details class="gain" name="resident-benefits"><summary data-i18n="gain2H">Разбор своего вопроса</summary><p data-i18n="gain2P">Раз в месяц совет директоров берёт запрос резидента в работу. То, что вы тянули полгода, разбирается за один вечер.</p></details>
+        <details class="gain" name="resident-benefits"><summary data-i18n="gain3H">Партнёрства без продаж в лоб</summary><p data-i18n="gain3P">Агрессивные продажи внутри запрещены Кодексом — поэтому здесь говорят по делу, и сделки случаются сами.</p></details>
+        <details class="gain" name="resident-benefits"><summary data-i18n="gain4H">Приложение клуба</summary><p data-i18n="gain4P">Расписание и регистрация, каталог резидентов с нишами и запросами, чаты, обучение, привилегии партнёров, рейтинг активности.</p></details>
+        <details class="gain" name="resident-benefits"><summary data-i18n="gain5H">Среда, где не обсуждают за спиной</summary><p data-i18n="gain5P">Конфиденциальность — одно из самых жёстких правил Кодекса. Всё, что сказано внутри, остаётся внутри.</p></details>
+      </div>
       </div>
     </div>
   </section>
 
   <!-- ── 5. Кодекс как обещание остальным ─────────────────────────────── -->
-  <section class="band band--fill" id="code">
+  <section class="band band--fill" id="code" data-middle-section>
     <div class="wrap code-grid">
       <div class="reveal">
         <p class="tag" data-i18n="docTag">Документ клуба</p>
-        <h2 style="font-size:clamp(30px,4.4vw,52px);line-height:1.04;margin-top:14px" data-i18n="codeTitle">Кодекс резидента</h2>
+        <h2  data-i18n="codeTitle">Кодекс резидента</h2>
         <p class="band__note" style="margin-top:18px" data-i18n="codeNote">
           Кодекс — не список запретов, а обещание, которое каждый резидент даёт
           остальным. Именно он делает клуб местом, куда можно прийти со своим
@@ -275,7 +200,7 @@
   </section>
 
   <!-- ── 6. Путь в клуб ───────────────────────────────────────────────── -->
-  <section class="band" id="path">
+  <section class="band" id="path" data-middle-section>
     <div class="wrap">
       <div class="band__head reveal">
         <div>
@@ -315,7 +240,7 @@
   </section>
 
   <!-- ── 7. Города ────────────────────────────────────────────────────── -->
-  <section class="band" id="cities" style="padding-top:0">
+  <section class="band" id="cities" data-middle-section style="padding-top:0">
     <div class="wrap">
       <div class="band__head reveal">
         <div>
@@ -352,7 +277,7 @@
   </section>
 
   <!-- ── 8. Вопросы ───────────────────────────────────────────────────── -->
-  <section class="band" id="faq" style="padding-top:0">
+  <section class="band" id="faq" data-middle-section style="padding-top:0">
     <div class="wrap">
       <div class="band__head reveal">
         <div>
@@ -368,11 +293,11 @@
       <div class="faq">
         <details class="qa reveal">
           <summary data-i18n="q1">Сколько стоит резидентство?</summary>
-          <p data-i18n="a1">Условия участия менеджер клуба называет на звонке после заявки — вместе с тем, что входит в членство и как оплачиваются отдельные мероприятия. Все суммы в тенге.</p>
+          <p data-i18n="a1">Взнос — 900 000 ₸ за один календарный год участия. Год отсчитывается со дня поступления оплаты. Взнос фиксированный: он не зависит от того, сколько мероприятий вы посетили. Продление на следующий год — по цене, действующей на момент оплаты.</p>
         </details>
         <details class="qa reveal">
           <summary data-i18n="q2">Обязательно ходить на все встречи?</summary>
-          <p data-i18n="a2">Нет, но дисциплина посещения — отдельный раздел Кодекса. Клуб держится на тех, кто приходит; регулярные пропуски обсуждаются советом.</p>
+          <p data-i18n="a2">Обязателен только Совет директоров — он ежемесячный, проходит в постоянной группе и требует подготовки. Допускается пропуск трёх советов с предупреждением; после четвёртого резидент выбывает из группы. Остальные форматы — по желанию.</p>
         </details>
         <details class="qa reveal">
           <summary data-i18n="q3">Я не из Алматы. Можно вступить?</summary>
@@ -390,21 +315,30 @@
           <summary data-i18n="q6">Можно продавать свои услуги резидентам?</summary>
           <p data-i18n="a6">Продажи в лоб запрещены Кодексом. Рассказать, чем вы полезны, можно в каталоге резидентов — дальше человек решает сам.</p>
         </details>
+        <details class="qa reveal">
+          <summary data-i18n="q7">Можно ли вернуть взнос?</summary>
+          <p data-i18n="a7">Нет. По условиям соглашения взнос — фиксированная плата за право участия на год; он не возвращается и не передаётся другому лицу, в том числе при досрочном расторжении. Поэтому клуб и не берёт оплату до того, как совет примет решение.</p>
+        </details>
       </div>
     </div>
   </section>
 
   <!-- ── 9. Заявка ────────────────────────────────────────────────────── -->
-  <section class="band" id="join" style="padding-top:0">
+  <section class="band" id="join" data-middle-section style="padding-top:0">
     <div class="wrap form-wrap">
       <div class="reveal">
         <p class="tag" data-i18n="joinTag">Вступление</p>
-        <h2 style="font-size:clamp(30px,4.4vw,52px);line-height:1.04;margin-top:14px" data-i18n="joinTitle">Заявка на резидентство</h2>
+        <h2  data-i18n="joinTitle">Заявка на резидентство</h2>
         <p class="band__note" style="margin-top:18px" data-i18n-html="joinNote">
           Заявку рассматривает совет клуба. После неё звонит менеджер и
           рассказывает об условиях — решают обе стороны. Перед отправкой
           прочитайте <a href="code.html" style="color:var(--ember)">Кодекс резидента</a>:
           согласие с ним обязательно.
+        </p>
+        <p class="band__note" style="margin-top:18px" data-i18n-html="joinPrice">
+          Взнос резидента — <b>900 000 ₸ за календарный год</b>. Оплата только
+          после решения совета; условия — в
+          <a href="oferta.html" style="color:var(--fire-lit)">публичной оферте</a>.
         </p>
         <p class="form__note" style="margin-top:18px" data-i18n="joinGate">
           Отправка недоступна, пока не отмечены все три пункта. Так на входе
@@ -453,7 +387,7 @@
   </section>
 
   <!-- ── 10. Контакты ─────────────────────────────────────────────────── -->
-  <section class="band band--tight" id="contacts">
+  <section class="band band--tight" id="contacts" data-middle-section>
     <div class="wrap">
       <div class="band__head reveal">
         <div>
@@ -488,6 +422,7 @@
 </main>
 
 <footer class="foot">
+  <div class="footer-word" aria-hidden="true">BURN<span>®</span></div>
   <div class="wrap">
     <div class="foot__grid">
       <div class="reveal">
@@ -511,10 +446,24 @@
       </div>
       <div class="foot__col reveal">
         <strong data-i18n="footDocs">Документы</strong>
+        <a href="oferta.html" data-i18n="footOferta">Публичная оферта</a>
         <a href="privacy.html" data-i18n="footPrivacy">Конфиденциальность</a>
         <a href="support.html" data-i18n="footSupport">Поддержка</a>
       </div>
     </div>
+    <div class="foot__req">
+      <p data-i18n="reqTitle">Реквизиты</p>
+      <dl>
+        <div><dt data-i18n="reqName">Наименование</dt><dd>ИП «GAME LAB»</dd></div>
+        <div><dt data-i18n="reqBin">ИИН/БИН</dt><dd>920408400294</dd></div>
+        <div><dt data-i18n="reqAddr">Адрес</dt><dd data-i18n="reqAddrValue">РК, г. Алматы, ул. Телжан Шонанулы, 102</dd></div>
+        <div><dt data-i18n="reqIik">ИИК</dt><dd>KZ83601A861004426941</dd></div>
+        <div><dt data-i18n="reqBank">Банк</dt><dd data-i18n="reqBankValue">АО «Народный Банк Казахстана»</dd></div>
+        <div><dt data-i18n="reqBik">БИК</dt><dd>HSBKKZKX</dd></div>
+        <div><dt data-i18n="reqHead">Руководитель</dt><dd data-i18n="reqHeadValue">Спирина К. В.</dd></div>
+      </dl>
+    </div>
+
     <div class="foot__legal">
       <span>© <span id="year-now">2026</span> BURN Club</span>
       <span data-i18n="footCity">Алматы, Казахстан</span>
@@ -524,6 +473,7 @@
 </footer>
 
 <script src="i18n.js"></script>
+<script src="navigation.js" defer></script>
 <script type="module" src="app.js"></script>
 </body>
 </html>

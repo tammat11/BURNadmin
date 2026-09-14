@@ -33,3 +33,29 @@ python3 -m http.server 4000
 Публикация на Vercel: подключить репозиторий, framework preset — **Other**,
 build command оставить пустым, output directory — корень. Всё остальное
 Vercel определит сам.
+
+## Дизайн и технические заметки — 14.09.2026
+
+Выбранный пользователем концепт — OBSIDIAN (`design/selected-concept.png`):
+массивная узкая типографика BURN, металлическая маска с огненными гранями,
+чёрный фон и оранжевая кнопка. Предыдущие варианты заменены этим направлением.
+
+- `fire.css` — Obsidian-тема поверх общих стилей `styles.css`.
+- `middle.css` — отдельное оформление середины после одобрения главного экрана и футера.
+- `fonts.css` и `assets/fonts/` — локальные Anton и Manrope.
+- `navigation.js` — мобильное меню, закрытие после перехода и по Escape.
+- `assets/obsidian-mask.jpg` — оптимизированный арт, исходник в `design/`.
+- `scripts/check-site.mjs` — автономная проверка формы без сети и записи в Firebase.
+- `design-qa.md` — результаты визуального сравнения и проверки поведения.
+
+Исходный `app.js` и схема заявки сохранены. Условия, оферта и политика,
+обновлённые параллельно с дизайном, сохранены без переписывания юридического текста.
+
+Арт сделан встроенным ImageGen по выбранному макету. Промпт: extract exact
+reference samurai flame mask; preserve weathered chrome sculpture and molten
+orange seams; remove text and UI; centered 1024x1536 composition on near-black.
+Иллюстрация не является фотографией резидента. Стрелка — Phosphor Icons.
+
+Локально: `python3 -m http.server 4188`. Проверка формы:
+`node scripts/check-site.mjs`. Публикация на Vercel — отдельный шаг;
+локальные изменения сами по себе не являются деплоем.
