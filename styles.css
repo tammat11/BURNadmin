@@ -169,9 +169,10 @@ p { margin: 0; }
 .top__nav a { color: var(--ink-soft); text-decoration: none; }
 .top__nav a:hover { color: var(--ember); }
 
-@media (max-width: 980px) {
-  .top__nav, .top__codes { display: none; }
-}
+/* Коды городов — украшение, и они уходят первыми: в шапке теперь ещё и
+   выбор языка, который скрывать нельзя. */
+@media (max-width: 1200px) { .top__codes { display: none; } }
+@media (max-width: 980px) { .top__nav { display: none; } }
 
 /* ── Кнопки ────────────────────────────────────────────────────────────── */
 
@@ -1451,6 +1452,63 @@ button, .btn, .consent { cursor: pointer; }
   margin-top: 10px;
   font: 500 13px/1.45 var(--body);
   color: var(--ink-soft);
+}
+
+
+/* ── Переключатель языка ───────────────────────────────────────────────── */
+
+.langs {
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.langs button {
+  min-width: 40px;
+  min-height: 32px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font: 700 11px/1 var(--mono);
+  letter-spacing: 0.1em;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.langs button:hover { color: var(--ink); }
+
+.langs button.is-on {
+  background: var(--fire);
+  color: #1a0a04;
+  box-shadow: 0 0 18px rgba(255, 90, 31, 0.45);
+}
+
+/* На узком экране коды городов уходят, а выбор языка остаётся: это
+   требование к сайту, а не украшение. */
+@media (max-width: 980px) {
+  .langs { order: 3; }
+  .langs button { min-width: 36px; min-height: 36px; }
+}
+
+@media (max-width: 420px) {
+  .top { gap: 10px; padding-left: 16px; padding-right: 16px; }
+  .top__mark small { display: none; }
+}
+
+/* Пометка о языке оригинала документа. */
+.doc__note {
+  margin: 14px 0 0;
+  padding: 12px 16px;
+  border-left: 2px solid var(--ember);
+  background: rgba(255, 90, 31, 0.08);
+  border-radius: 0 10px 10px 0;
+  font: 500 14px/1.5 var(--body);
+  color: var(--ink-soft);
+  max-width: 64ch;
 }
 
 @media (prefers-reduced-motion: reduce) {

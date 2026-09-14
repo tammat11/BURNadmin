@@ -12,33 +12,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="code">
 
-<a class="skip" href="#main">К содержанию</a>
+<a class="skip" href="#main" data-i18n="skip">К содержанию</a>
 
 <header class="top is-stuck" id="top">
   <a class="top__mark" href="index.html">
     <img src="assets/crest.png" alt="">
-    <span><b>BURN</b><small>Business club</small></span>
+    <span><b>BURN</b><small data-i18n="brandSub">Business club</small></span>
   </a>
   <div class="top__codes" aria-label="Города клуба">
     <span class="is-live">ALA</span>
     <span>NQZ</span>
     <span>CIT</span>
   </div>
+  <div class="langs" role="group" aria-label="Язык сайта / Сайт тілі / Site language">
+    <button type="button" data-lang="ru" class="is-on">RU</button>
+    <button type="button" data-lang="kk">KZ</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
   <nav class="top__nav">
-    <a href="index.html#club">Клуб</a>
-    <a href="index.html#path">Как вступить</a>
-    <a href="index.html#life">Форматы</a>
-    <a href="code.html">Кодекс</a>
+    <a href="index.html#club" data-i18n="navClub">Клуб</a>
+    <a href="index.html#path" data-i18n="navPath">Как вступить</a>
+    <a href="index.html#life" data-i18n="navLife">Форматы</a>
+    <a href="code.html" data-i18n="navCode">Кодекс</a>
   </nav>
-  <a class="btn btn--fire btn--sm" href="index.html#join">Подать заявку <span class="arrow">→</span></a>
+  <a class="btn btn--fire btn--sm" href="index.html#join"><span data-i18n="ctaApply">Подать заявку</span> <span class="arrow">→</span></a>
 </header>
 
 <main class="doc" id="main">
   <div class="wrap">
-    <p class="eyebrow">Документ клуба</p>
-    <h1>Кодекс резидента BURN</h1>
+    <p class="eyebrow" data-i18n="docTag">Документ клуба</p>
+    <h1 data-i18n="codeH1">Кодекс резидента BURN</h1>
+    <p class="doc__note" data-i18n="codeAuthentic" hidden>Аутентичный текст Кодекса — на русском языке.</p>
     <p class="doc__lede">
       BURN — сообщество достойных мужчин, объединённых ценностями братства,
       семьи, честности, развития и взаимной поддержки. Этот Кодекс создан не
@@ -328,8 +334,8 @@
     </section>
 
     <div class="hero__actions" style="margin-top:44px">
-      <a class="btn btn--fire" href="index.html#join">Подать заявку</a>
-      <a class="btn btn--ghost" href="index.html">На главную</a>
+      <a class="btn btn--fire" href="index.html#join" data-i18n="ctaApply">Подать заявку</a>
+      <a class="btn btn--ghost" href="index.html" data-i18n="ctaHome">На главную</a>
     </div>
   </div>
 </main>
@@ -346,5 +352,6 @@
 </footer>
 
 <script type="module" src="app.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>
