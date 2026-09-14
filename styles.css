@@ -936,7 +936,9 @@ button[disabled] { opacity: 0.42; cursor: not-allowed; }
 
 .contacts {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* auto-fit, а не фиксированные три колонки: карточек то две, то три —
+     при жёсткой сетке пустая третья колонка оставляла дыру справа. */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   border-top: 1px solid var(--rule);
 }
 
