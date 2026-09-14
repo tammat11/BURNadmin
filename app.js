@@ -44,64 +44,7 @@ if ("IntersectionObserver" in window) {
   revealables.forEach(node => node.classList.add("is-in"));
 }
 
-/* ── Искры на первом экране ────────────────────────────────────────────── */
-
-/* Немного медленных искр, поднимающихся снизу. Это не фейерверк: штук
-   сорок, тёплого цвета, с затуханием — жар от углей, а не спецэффект. */
-const embers = document.getElementById("embers");
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-if (embers && !reduceMotion) {
-  const ctx = embers.getContext("2d");
-  let width = 0, height = 0, sparks = [];
-
-  const spawn = () => ({
-    x: Math.random() * width,
-    y: height + Math.random() * 40,
-    r: 0.8 + Math.random() * 2.2,
-    vx: (Math.random() - 0.5) * 0.35,
-    vy: -(0.35 + Math.random() * 0.75),
-    life: 0,
-    span: 240 + Math.random() * 300,
-    hue: 18 + Math.random() * 22,
-  });
-
-  const resize = () => {
-    const box = embers.parentElement.getBoundingClientRect();
-    width = embers.width = Math.floor(box.width);
-    height = embers.height = Math.floor(box.height);
-    const count = Math.min(60, Math.round(width / 24));
-    sparks = Array.from({ length: count }, () => {
-      const s = spawn();
-      s.y = Math.random() * height;
-      s.life = Math.random() * s.span;
-      return s;
-    });
-  };
-
-  const tick = () => {
-    ctx.clearRect(0, 0, width, height);
-    for (const s of sparks) {
-      s.life += 1;
-      s.x += s.vx + Math.sin(s.life / 40) * 0.25;
-      s.y += s.vy;
-      const t = s.life / s.span;
-      const alpha = t < 0.15 ? t / 0.15 : 1 - (t - 0.15) / 0.85;
-      ctx.beginPath();
-      ctx.fillStyle = `hsla(${s.hue}, 100%, 62%, ${Math.max(0, alpha) * 0.85})`;
-      ctx.shadowColor = `hsla(${s.hue}, 100%, 55%, 0.9)`;
-      ctx.shadowBlur = 12;
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fill();
-      if (t >= 1 || s.y < -20) Object.assign(s, spawn());
-    }
-    requestAnimationFrame(tick);
-  };
-
-  resize();
-  addEventListener("resize", resize, { passive: true });
-  requestAnimationFrame(tick);
-}
 
 /* ── Матовая шапка после прокрутки ─────────────────────────────────────── */
 

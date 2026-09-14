@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BURN — закрытое сообщество предпринимателей, Алматы</title>
 <meta name="description" content="BURN — клуб предпринимателей, которые уже построили бизнес. Алматы. Вход по заявке, личной встрече и решению совета.">
-<meta name="theme-color" content="#0e0906">
+<meta name="theme-color" content="#0a0a0a">
 <link rel="icon" href="assets/crest.png">
 <meta property="og:title" content="BURN — закрытое сообщество предпринимателей">
 <meta property="og:description" content="Клуб для тех, кто уже построил. Алматы.">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700;6..96,900&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="index">
@@ -51,9 +51,6 @@
 
   <!-- ── 1. Позиция клуба ─────────────────────────────────────────────── -->
   <section class="hero">
-    <div class="hero__glow" aria-hidden="true"></div>
-    <canvas class="embers" id="embers" aria-hidden="true"></canvas>
-    <div class="hero__mark" aria-hidden="true">BURN</div>
     <div class="wrap hero__grid">
       <div>
         <div class="stamp">
@@ -76,8 +73,6 @@
 
       <!-- Карта резидента: то, что получает дошедший до конца пути. -->
       <aside class="card" aria-label="Карта резидента BURN">
-        <span class="card__sheen" aria-hidden="true"></span>
-        <img class="card__ghost" src="assets/crest.png" alt="" aria-hidden="true">
         <div class="card__head">
           <span class="tag" data-i18n="cardTag">Карта резидента</span>
           <span>№ BRN · 0001</span>
@@ -113,11 +108,6 @@
     </div>
   </section>
 
-  <div class="ribbon" aria-hidden="true">
-    <div class="ribbon__track">
-      <span data-i18n="ribEnv">Окружение</span><i></i><span data-i18n="ribDeals">Сделки</span><i></i><span data-i18n="ribDecisions">Решения</span><i></i><span data-i18n="ribTrust">Доверие</span><i></i><span data-i18n="almaty">Алматы</span><i></i><span data-i18n="codeTitle">Кодекс резидента</span><i></i>
-      <span data-i18n="ribEnv">Окружение</span><i></i><span data-i18n="ribDeals">Сделки</span><i></i><span data-i18n="ribDecisions">Решения</span><i></i><span data-i18n="ribTrust">Доверие</span><i></i><span data-i18n="almaty">Алматы</span><i></i><span data-i18n="codeTitle">Кодекс резидента</span><i></i>
-    </div>
   </div>
 
   <!-- ── 2. Честный фильтр ────────────────────────────────────────────── -->
@@ -159,7 +149,7 @@
   </section>
 
   <!-- ── 3. Год в клубе ───────────────────────────────────────────────── -->
-  <section class="band band--coal band--glow" id="year">
+  <section class="band band--fill" id="year">
     <div class="wrap">
       <div class="band__head reveal">
         <div>
@@ -252,7 +242,7 @@
   </section>
 
   <!-- ── 5. Кодекс как обещание остальным ─────────────────────────────── -->
-  <section class="band band--coal" id="code">
+  <section class="band band--fill" id="code">
     <div class="wrap code-grid">
       <div class="reveal">
         <p class="tag" data-i18n="docTag">Документ клуба</p>
@@ -498,7 +488,6 @@
 </main>
 
 <footer class="foot">
-  <div class="foot__word" aria-hidden="true">BURN</div>
   <div class="wrap">
     <div class="foot__grid">
       <div class="reveal">
