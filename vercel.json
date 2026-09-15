@@ -11,12 +11,5 @@
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/admin",
-      "destination": "https://burn-b365c.web.app/admin.html",
-      "permanent": false
-    }
   ]
 }
