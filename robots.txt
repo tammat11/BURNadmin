@@ -1,0 +1,9 @@
+# burn-club.kz
+User-agent: *
+Allow: /
+
+# Админка клуба — служебная страница, в поиске ей делать нечего.
+Disallow: /admin.html
+Disallow: /admin
+
+Sitemap: https://burn-club.kz/sitemap.xml
