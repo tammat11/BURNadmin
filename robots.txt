@@ -33,9 +33,4 @@ Allow: /
 Disallow: /admin.html
 Disallow: /admin
 
-# Файл подтверждения прав в Search Console — служебный, не страница клуба.
-# Удалять его нельзя: без него подтверждение слетит.
-User-agent: *
-Disallow: /google654dae7272bc7144.html
-
 Sitemap: https://burn-club.kz/sitemap.xml
