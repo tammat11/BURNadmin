@@ -1,8 +1,35 @@
 # burn-club.kz
+
+# ── Поисковые роботы ──────────────────────────────────────────────────────
 User-agent: *
 Allow: /
 
 # Админка клуба — служебная страница, в поиске ей делать нечего.
+Disallow: /admin.html
+Disallow: /admin
+
+# ── Роботы ИИ-систем ──────────────────────────────────────────────────────
+#
+# Разрешаем явно. Молчание здесь — не разрешение: часть этих роботов по
+# умолчанию не ходит на сайт, а часть ходит, но владелец потом не может
+# доказать, что был не против. Клубу нужно обратное: чтобы ассистент,
+# которого спросили «какие есть бизнес-клубы в Алматы», знал ответ и мог
+# сослаться на первоисточник.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Bingbot
+User-agent: CCBot
+User-agent: YandexBot
+Allow: /
 Disallow: /admin.html
 Disallow: /admin
 

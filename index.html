@@ -36,7 +36,10 @@
  "@context": "https://schema.org",
  "@graph": [
   {
-   "@type": "Organization",
+   "@type": [
+    "Organization",
+    "LocalBusiness"
+   ],
    "@id": "https://burn-club.kz/#organization",
    "name": "BURN Club",
    "alternateName": [
@@ -80,7 +83,65 @@
     "ru",
     "kk",
     "en"
-   ]
+   ],
+   "priceRange": "900 000 ₸ / год",
+   "currenciesAccepted": "KZT",
+   "slogan": "Окружение решает",
+   "keywords": "бизнес-клуб Алматы, закрытый клуб предпринимателей, сообщество предпринимателей Казахстан, нетворкинг Алматы",
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Год в клубе BURN",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Совет директоров",
+       "description": "Постоянная группа ищет решения по задачам резидентов. Подготовка обязательна, содержание встречи конфиденциально."
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Бизнес-завтрак",
+       "description": "Утренняя встреча с выступлениями приглашённых спикеров и экспертов."
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Разбор",
+       "description": "Бизнес-кейсы, задачи и запросы разбираются вместе с предпринимателями и приглашёнными экспертами."
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Челленджи и практики роста",
+       "description": "Активности, которые развивают личные и предпринимательские навыки резидента."
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Инвест-группа и биржа проектов",
+       "description": "Обмен инвестиционными предложениями, поиск партнёров и обсуждение проектов."
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Баня, выезды и путешествия",
+       "description": "Закрытые неформальные встречи и совместные поездки резидентов."
+      }
+     }
+    ]
+   }
   },
   {
    "@type": "WebSite",
@@ -91,6 +152,21 @@
    "publisher": {
     "@id": "https://burn-club.kz/#organization"
    }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://burn-club.kz/#webpage",
+   "url": "https://burn-club.kz/",
+   "name": "Бизнес-клуб BURN — закрытое сообщество предпринимателей в Алматы",
+   "isPartOf": {
+    "@id": "https://burn-club.kz/#website"
+   },
+   "about": {
+    "@id": "https://burn-club.kz/#organization"
+   },
+   "primaryImageOfPage": "https://burn-club.kz/assets/og-cover.jpg",
+   "inLanguage": "ru",
+   "description": "Закрытый бизнес-клуб в Алматы для предпринимателей, которые уже построили дело."
   },
   {
    "@type": "Service",
@@ -173,7 +249,11 @@
       "text": "Нет. По условиям соглашения взнос — фиксированная плата за право участия на год; он не возвращается и не передаётся другому лицу, в том числе при досрочном расторжении. Поэтому клуб и не берёт оплату до того, как совет примет решение."
      }
     }
-   ]
+   ],
+   "isPartOf": {
+    "@id": "https://burn-club.kz/#webpage"
+   },
+   "inLanguage": "ru"
   }
  ]
 }
